@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "548681749901",
+    "project_id": "fyp-organ-donation-afd01",
+    "storage_bucket": "fyp-organ-donation-afd01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548681749901:android:ef7371e4c92e442f5999c4",
+        "android_client_info": {
+          "package_name": "com.example.fyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548681749901-qn5nq26ofdh9io4hrrd6ucaqhigj4i3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fyp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "548681749901-39aqivf2lpkpqbrco05d6mfij73bf21v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7o635BaSG1kIUM1fkq3hp86eLjVRc1dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548681749901-39aqivf2lpkpqbrco05d6mfij73bf21v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548681749901-4sus26a3vsisung1gk5lj5bkma81jkok.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.fyporgandonation"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548681749901:android:7b3bb8eabb3b64305999c4",
+        "android_client_info": {
+          "package_name": "com.flutterflow.fyporgandonation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548681749901-jucvg92umhl4hln84uf89b04i41sbfrl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.fyporgandonation",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "548681749901-39aqivf2lpkpqbrco05d6mfij73bf21v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7o635BaSG1kIUM1fkq3hp86eLjVRc1dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548681749901-39aqivf2lpkpqbrco05d6mfij73bf21v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548681749901-4sus26a3vsisung1gk5lj5bkma81jkok.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.fyporgandonation"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
