@@ -11,10 +11,67 @@ abstract class DonorsRecord
   static Serializer<DonorsRecord> get serializer => _$donorsRecordSerializer;
 
   @nullable
+  @BuiltValueField(wireName: 'first_name')
+  String get firstName;
+
+  @nullable
+  @BuiltValueField(wireName: 'middle_name')
+  String get middleName;
+
+  @nullable
+  @BuiltValueField(wireName: 'last_name')
+  String get lastName;
+
+  @nullable
+  @BuiltValueField(wireName: 'date_of_birth')
+  String get dateOfBirth;
+
+  @nullable
+  @BuiltValueField(wireName: 'address_line_1')
+  String get addressLine1;
+
+  @nullable
+  @BuiltValueField(wireName: 'address_line_2')
+  String get addressLine2;
+
+  @nullable
+  String get city;
+
+  @nullable
+  String get province;
+
+  @nullable
+  @BuiltValueField(wireName: 'zip_code')
+  String get zipCode;
+
+  @nullable
+  @BuiltValueField(wireName: 'donor_email')
+  String get donorEmail;
+
+  @nullable
+  @BuiltValueField(wireName: 'donor_phone_number')
+  String get donorPhoneNumber;
+
+  @nullable
+  String get gender;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
-  static void _initializeBuilder(DonorsRecordBuilder builder) => builder;
+  static void _initializeBuilder(DonorsRecordBuilder builder) => builder
+    ..firstName = ''
+    ..middleName = ''
+    ..lastName = ''
+    ..dateOfBirth = ''
+    ..addressLine1 = ''
+    ..addressLine2 = ''
+    ..city = ''
+    ..province = ''
+    ..zipCode = ''
+    ..donorEmail = ''
+    ..donorPhoneNumber = ''
+    ..gender = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('donors');
@@ -37,5 +94,32 @@ abstract class DonorsRecord
           {...mapFromFirestore(data), kDocumentReferenceField: reference});
 }
 
-Map<String, dynamic> createDonorsRecordData() =>
-    serializers.toFirestore(DonorsRecord.serializer, DonorsRecord((d) => d));
+Map<String, dynamic> createDonorsRecordData({
+  String firstName,
+  String middleName,
+  String lastName,
+  String dateOfBirth,
+  String addressLine1,
+  String addressLine2,
+  String city,
+  String province,
+  String zipCode,
+  String donorEmail,
+  String donorPhoneNumber,
+  String gender,
+}) =>
+    serializers.toFirestore(
+        DonorsRecord.serializer,
+        DonorsRecord((d) => d
+          ..firstName = firstName
+          ..middleName = middleName
+          ..lastName = lastName
+          ..dateOfBirth = dateOfBirth
+          ..addressLine1 = addressLine1
+          ..addressLine2 = addressLine2
+          ..city = city
+          ..province = province
+          ..zipCode = zipCode
+          ..donorEmail = donorEmail
+          ..donorPhoneNumber = donorPhoneNumber
+          ..gender = gender));

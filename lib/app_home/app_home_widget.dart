@@ -3,9 +3,10 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_page/home_page_widget.dart';
+import '../login/login_widget.dart';
 import '../register_your_decision/register_your_decision_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppHomeWidget extends StatefulWidget {
@@ -23,7 +24,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF9D0000),
+        backgroundColor: Color(0xFFB80000),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -47,29 +48,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                 fontSize: 18,
               ),
         ),
-        actions: [
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
-            icon: Icon(
-              Icons.logout,
-              color: Colors.white,
-              size: 30,
-            ),
-            onPressed: () async {
-              await signOut();
-              await Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePageWidget(),
-                ),
-                (r) => false,
-              );
-            },
-          ),
-        ],
+        actions: [],
         centerTitle: false,
         elevation: 2,
       ),
@@ -109,7 +88,10 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                     child: AuthUserStreamWidget(
                       child: Text(
-                        currentUserDisplayName,
+                        valueOrDefault<String>(
+                          currentUserDisplayName,
+                          'Guest User',
+                        ),
                         style: FlutterFlowTheme.of(context).title1.override(
                               fontFamily: 'Poppins',
                               color: Colors.black,
@@ -154,13 +136,28 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                       Expanded(
                         child: FFButtonWidget(
                           onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    RegisterYourDecisionWidget(),
-                              ),
-                            );
+                            if (currentUserEmailVerified) {
+                              await Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Duration(milliseconds: 300),
+                                  reverseDuration: Duration(milliseconds: 300),
+                                  child: RegisterYourDecisionWidget(),
+                                ),
+                              );
+                            } else {
+                              await Navigator.pushAndRemoveUntil(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.leftToRight,
+                                  duration: Duration(milliseconds: 300),
+                                  reverseDuration: Duration(milliseconds: 300),
+                                  child: LoginWidget(),
+                                ),
+                                (r) => false,
+                              );
+                            }
                           },
                           text: 'Register your decision',
                           options: FFButtonOptions(

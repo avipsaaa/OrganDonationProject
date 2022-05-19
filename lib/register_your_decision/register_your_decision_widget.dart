@@ -1,8 +1,13 @@
+import '../amend/amend_widget.dart';
+import '../do_not_donate/do_not_donate_widget.dart';
+import '../donate/donate_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../withdraw/withdraw_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterYourDecisionWidget extends StatefulWidget {
@@ -39,7 +44,7 @@ class _RegisterYourDecisionWidgetState
           },
         ),
         title: Text(
-          'Register Your Decision',
+          'Register your decision',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
@@ -64,8 +69,8 @@ class _RegisterYourDecisionWidgetState
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.network(
-                'https://img.freepik.com/free-vector/choose-concept-illustration_114360-553.jpg?t=st=1652065890~exp=1652066490~hmac=d6653f9b070f2bb0ad13cf4d99cc0de0aeeed8e6f73614462060f819411ce0c6&w=740',
+              Image.asset(
+                'assets/images/registerToDonate.jpg',
                 width: double.infinity,
                 height: 180,
                 fit: BoxFit.cover,
@@ -113,8 +118,13 @@ class _RegisterYourDecisionWidgetState
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('ButtonDonate pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DonateWidget(),
+                                  ),
+                                );
                               },
                               text: 'Donate',
                               icon: Icon(
@@ -151,8 +161,13 @@ class _RegisterYourDecisionWidgetState
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('ButtonDoNotDonate pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DoNotDonateWidget(),
+                                  ),
+                                );
                               },
                               text: 'Do not donate',
                               icon: Icon(
@@ -189,8 +204,13 @@ class _RegisterYourDecisionWidgetState
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('ButtonAmend pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AmendWidget(),
+                                  ),
+                                );
                               },
                               text: 'Amend',
                               icon: Icon(
@@ -226,8 +246,13 @@ class _RegisterYourDecisionWidgetState
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('ButtonWithdraw pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => WithdrawWidget(),
+                                  ),
+                                );
                               },
                               text: 'Withdraw',
                               icon: Icon(
