@@ -53,145 +53,145 @@ class _RegisterYourDecisionWidgetState
         elevation: 2,
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/images/registerToDonate.jpg',
-                width: double.infinity,
-                height: 370,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
-                      child: Row(
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/registerToDonate.jpg',
+                    width: double.infinity,
+                    height: 370,
+                    fit: BoxFit.cover,
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             'Before you start',
                             style: FlutterFlowTheme.of(context).title3.override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: 'Nunito',
                                   color: Colors.black,
                                 ),
                           ),
                         ],
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Whatever you decide, please talk to your loved ones. They will always be consulted, and can overturn your decision if they aren\'t sure what you want. \nOrgan donation in some parts of the Nepal has changed. See how the changes affect you. \nWithdrawing your name from the Afterlife Organ Donor Registration is not the same as recording a decision not to donate.',
-                              textAlign: TextAlign.justify,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF161819),
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('Donate');
-                              },
-                              text: 'Donate',
-                              icon: Icon(
-                                Icons.check_circle_outline_outlined,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              options: FFButtonOptions(
-                                width: 130,
-                                height: 70,
-                                color: Color(0xFF166F32),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Whatever you decide, please talk to your loved ones. They will always be consulted, and can overturn your decision if they aren\'t sure what you want. \nOrgan donation in some parts of the Nepal has changed. See how the changes affect you. \nWithdrawing your name from the Afterlife Organ Donor Registration is not the same as recording a decision not to donate.',
+                                textAlign: TextAlign.justify,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
+                                      fontFamily: 'Nunito',
+                                      color: Color(0xFF161819),
                                     ),
-                                elevation: 4,
-                                borderSide: BorderSide(
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Donate');
+                                },
+                                text: 'Donate',
+                                icon: Icon(
+                                  Icons.check_circle_outline_outlined,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 130,
+                                  height: 70,
                                   color: Color(0xFF166F32),
-                                  width: 1,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: Colors.white,
+                                      ),
+                                  elevation: 4,
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF166F32),
+                                    width: 1,
+                                  ),
+                                  borderRadius: 12,
                                 ),
-                                borderRadius: 12,
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 20),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('Withdraw');
-                              },
-                              text: 'Withdraw',
-                              icon: Icon(
-                                Icons.logout,
-                                size: 20,
-                              ),
-                              options: FFButtonOptions(
-                                width: 130,
-                                height: 70,
-                                color: Color(0xFFA9003E),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 4,
-                                borderSide: BorderSide(
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 20),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Withdraw');
+                                },
+                                text: 'Withdraw',
+                                icon: Icon(
+                                  Icons.logout,
+                                  size: 20,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 130,
+                                  height: 70,
                                   color: Color(0xFFA9003E),
-                                  width: 1,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: Colors.white,
+                                      ),
+                                  elevation: 4,
+                                  borderSide: BorderSide(
+                                    color: Color(0xFFA9003E),
+                                    width: 1,
+                                  ),
+                                  borderRadius: 12,
                                 ),
-                                borderRadius: 12,
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

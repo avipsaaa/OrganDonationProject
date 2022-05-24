@@ -51,288 +51,317 @@ class _TalkToYourLovedOnesWidgetState extends State<TalkToYourLovedOnesWidget> {
         elevation: 2,
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image.asset(
-                  'assets/images/talkToLovedOnes.jpg',
-                  width: double.infinity,
-                  height: 240,
-                  fit: BoxFit.cover,
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            'Your family will always be involved in organ donation',
-                            style:
-                                FlutterFlowTheme.of(context).subtitle1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                    ),
-                          ),
-                          Text(
-                            'Organ donation is when one person chooses to give an organ to save or improve the life of someone else. However, your family will still be consulted if organ donation is a possibility.',
-                            textAlign: TextAlign.justify,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF161819),
-                                    ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                        child: Column(
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Image.asset(
+                    'assets/images/talkToLovedOnes.jpg',
+                    width: double.infinity,
+                    height: 240,
+                    fit: BoxFit.cover,
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Text(
-                              'Your family has the authority to change your decision',
-                              textAlign: TextAlign.justify,
+                              'Your family will always be involved in organ donation',
                               style: FlutterFlowTheme.of(context)
                                   .subtitle1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Colors.black,
-                                    fontSize: 18,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w800,
                                   ),
                             ),
                             Text(
-                              'Each year, hundreds of opportunities for transplants are missed because families aren\'t sure what to do.\nYour family will always be consulted about whether you wanted to be an organ donor or not, and clinicians will never proceed with organ donation if your family or loved ones object. If you want to be an organ donor after you die, it\'s really important that you talk to your loved ones and make sure they understand and support your organ donation decision.',
+                              'Organ donation is when one person chooses to give an organ to save or improve the life of someone else. However, your family will still be consulted if organ donation is a possibility.',
                               textAlign: TextAlign.justify,
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFF161819),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    lineHeight: 1.5,
                                   ),
                             ),
                           ],
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Text(
-                              'How to talk about organ donation',
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle1
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  '1. Distinguish the facts and myths',
-                                  style: FlutterFlowTheme.of(context)
-                                      .subtitle2
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
-                                      ),
-                                ),
-                                Image.asset(
-                                  'assets/images/tylo1.jpg',
-                                  width: 100,
-                                  height: 220,
-                                  fit: BoxFit.cover,
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 8, 0, 0),
-                                  child: Text(
-                                    'Do your research about organ donation on the internet before you start.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF161819),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
-                              child: Column(
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                'Your family has the authority to change your decision',
+                                textAlign: TextAlign.justify,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle1
+                                    .override(
+                                      fontFamily: 'Nunito',
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                              ),
+                              Text(
+                                'Each year, hundreds of opportunities for transplants are missed because families aren\'t sure what to do.\nYour family will always be consulted about whether you wanted to be an organ donor or not, and clinicians will never proceed with organ donation if your family or loved ones object. If you want to be an organ donor after you die, it\'s really important that you talk to your loved ones and make sure they understand and support your organ donation decision.',
+                                textAlign: TextAlign.justify,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Nunito',
+                                      color: Color(0xFF161819),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      lineHeight: 1.5,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                'How to talk about organ donation',
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle1
+                                    .override(
+                                      fontFamily: 'Nunito',
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                              ),
+                              Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Text(
-                                    '2. Find a talking point',
+                                    '1. Distinguish the facts and myths',
                                     style: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                   ),
                                   Image.asset(
-                                    'assets/images/tylo2.jpg',
+                                    'assets/images/tylo1.jpg',
                                     width: 100,
                                     height: 220,
                                     fit: BoxFit.cover,
                                   ),
-                                  Text(
-                                    'Try to talk about something you\'ve seen in the news or on social media recently, if it helps. ',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF161819),
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Text(
-                                    '3. Relax',
-                                    style: FlutterFlowTheme.of(context)
-                                        .subtitle2
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.black,
-                                        ),
-                                  ),
-                                  Image.asset(
-                                    'assets/images/tylo3.jpg',
-                                    width: 100,
-                                    height: 270,
-                                    fit: BoxFit.cover,
-                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 8, 0, 0),
                                     child: Text(
-                                      'Don\'t get stressed and spend some time to get your thoughts together and relax. ',
+                                      'Do your research about organ donation on the internet before you start.',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Nunito',
                                             color: Color(0xFF161819),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            lineHeight: 1.5,
                                           ),
                                     ),
                                   ),
                                 ],
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Text(
-                                    '4. Speak from your heart',
-                                    style: FlutterFlowTheme.of(context)
-                                        .subtitle2
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.black,
-                                        ),
-                                  ),
-                                  Image.asset(
-                                    'assets/images/tylo4.jpg',
-                                    width: 100,
-                                    height: 240,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 8, 0, 0),
-                                    child: Text(
-                                      'Be as honest and open as you can be, and listen to each other. You don\'t have to agree!',
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      '2. Find a talking point',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Nunito',
+                                            color: Colors.black,
+                                          ),
+                                    ),
+                                    Image.asset(
+                                      'assets/images/tylo2.jpg',
+                                      width: 100,
+                                      height: 220,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Text(
+                                      'Try to talk about something you\'ve seen in the news or on social media recently, if it helps. ',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Nunito',
                                             color: Color(0xFF161819),
+                                            lineHeight: 1.5,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Text(
-                                    '5. Talk about your beliefs',
-                                    style: FlutterFlowTheme.of(context)
-                                        .subtitle2
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.black,
-                                        ),
-                                  ),
-                                  Image.asset(
-                                    'assets/images/tylo5.jpg',
-                                    width: 100,
-                                    height: 300,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 8, 0, 0),
-                                    child: Text(
-                                      'Make your faiths and beliefs a part of the conversation.',
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      '3. Relax',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .subtitle2
                                           .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFF161819),
+                                            fontFamily: 'Nunito',
+                                            color: Colors.black,
                                           ),
                                     ),
-                                  ),
-                                ],
+                                    Image.asset(
+                                      'assets/images/tylo3.jpg',
+                                      width: 100,
+                                      height: 270,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Text(
+                                        'Don\'t get stressed and spend some time to get your thoughts together and relax. ',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Nunito',
+                                              color: Color(0xFF161819),
+                                              lineHeight: 1.5,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      '4. Speak from your heart',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Nunito',
+                                            color: Colors.black,
+                                          ),
+                                    ),
+                                    Image.asset(
+                                      'assets/images/tylo4.jpg',
+                                      width: 100,
+                                      height: 240,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Text(
+                                        'Be as honest and open as you can be, and listen to each other. You don\'t have to agree!',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Nunito',
+                                              color: Color(0xFF161819),
+                                              lineHeight: 1.5,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 14, 0, 0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    Text(
+                                      '5. Talk about your beliefs',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Nunito',
+                                            color: Colors.black,
+                                          ),
+                                    ),
+                                    Image.asset(
+                                      'assets/images/tylo5.jpg',
+                                      width: 100,
+                                      height: 300,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Text(
+                                        'Make your faiths and beliefs a part of the conversation.',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Nunito',
+                                              color: Color(0xFF161819),
+                                              lineHeight: 1.5,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

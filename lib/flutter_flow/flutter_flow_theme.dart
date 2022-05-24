@@ -54,34 +54,34 @@ abstract class FlutterFlowTheme {
         fontSize: 22,
       );
   TextStyle get title3 => GoogleFonts.getFont(
-        'Poppins',
-        color: primaryText,
-        fontWeight: FontWeight.w600,
+        'Nunito',
+        color: Colors.black,
+        fontWeight: FontWeight.w800,
         fontSize: 20,
       );
   TextStyle get subtitle1 => GoogleFonts.getFont(
-        'Poppins',
-        color: primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 18,
+        'Nunito',
+        color: Colors.black,
+        fontWeight: FontWeight.w800,
+        fontSize: 20,
       );
   TextStyle get subtitle2 => GoogleFonts.getFont(
-        'Poppins',
-        color: secondaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 16,
+        'Nunito',
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
       );
   TextStyle get bodyText1 => GoogleFonts.getFont(
-        'Poppins',
-        color: primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 14,
+        'Nunito',
+        color: Color(0xFF161819),
+        fontWeight: FontWeight.w500,
+        fontSize: 16,
       );
   TextStyle get bodyText2 => GoogleFonts.getFont(
-        'Poppins',
-        color: secondaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 14,
+        'Nunito',
+        color: Color(0xFF161819),
+        fontWeight: FontWeight.w500,
+        fontSize: 16,
       );
 }
 

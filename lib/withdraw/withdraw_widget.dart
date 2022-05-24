@@ -52,22 +52,22 @@ class _WithdrawWidgetState extends State<WithdrawWidget> {
         elevation: 2,
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                  child: Row(
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -75,17 +75,14 @@ class _WithdrawWidgetState extends State<WithdrawWidget> {
                         child: Text(
                           'Withdraw your  decision',
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: 'Nunito',
                                 color: Colors.black,
                               ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                  child: Row(
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
@@ -94,74 +91,77 @@ class _WithdrawWidgetState extends State<WithdrawWidget> {
                           textAlign: TextAlign.justify,
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFF161819),
+                                    lineHeight: 1.5,
                                   ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            var confirmDialogResponse = await showDialog<bool>(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text(
-                                          'Would you like to withdraw your decision?'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () => Navigator.pop(
-                                              alertDialogContext, false),
-                                          child: Text('Cancel'),
-                                        ),
-                                        TextButton(
-                                          onPressed: () => Navigator.pop(
-                                              alertDialogContext, true),
-                                          child: Text('Confirm'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                ) ??
-                                false;
-                            await currentUserReference.delete();
-                          },
-                          text: 'Withdraw',
-                          icon: Icon(
-                            Icons.logout,
-                            size: 20,
-                          ),
-                          options: FFButtonOptions(
-                            width: 140,
-                            height: 50,
-                            color: Color(0xFFA9003E),
-                            textStyle:
-                                FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                            elevation: 4,
-                            borderSide: BorderSide(
-                              color: Color(0xFFA9003E),
-                              width: 1,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text(
+                                                'Would you like to withdraw your decision?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text('Confirm'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              await currentUserReference.delete();
+                            },
+                            text: 'Withdraw',
+                            icon: Icon(
+                              Icons.logout,
+                              size: 20,
                             ),
-                            borderRadius: 12,
+                            options: FFButtonOptions(
+                              width: 140,
+                              height: 50,
+                              color: Color(0xFFA9003E),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Nunito',
+                                    color: Colors.white,
+                                  ),
+                              elevation: 4,
+                              borderSide: BorderSide(
+                                color: Color(0xFFA9003E),
+                                width: 1,
+                              ),
+                              borderRadius: 12,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

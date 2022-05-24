@@ -386,7 +386,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 children: [
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      await sendEmailVerification();
                                       GoRouter.of(context).prepareAuthEvent();
 
                                       final user = await createAccountWithEmail(
@@ -413,6 +412,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           .doc(user.uid)
                                           .update(usersCreateData);
 
+                                      await sendEmailVerification();
                                       context.goNamedAuth('AppHome', mounted);
                                     },
                                     text: 'Register',
@@ -459,7 +459,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Lexend Deca',
                                           color: Color(0xFF57636C),
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500,

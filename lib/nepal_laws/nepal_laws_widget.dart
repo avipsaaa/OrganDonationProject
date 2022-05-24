@@ -83,7 +83,7 @@ class _NepalLawsWidgetState extends State<NepalLawsWidget> {
                           Text(
                             'Organ Transplantation in Nepal',
                             style: FlutterFlowTheme.of(context).title3.override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: 'Nunito',
                                   color: Colors.black,
                                 ),
                           ),

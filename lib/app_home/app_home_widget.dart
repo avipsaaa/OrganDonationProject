@@ -76,10 +76,11 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Text(
-                        'Hi',
-                        style: FlutterFlowTheme.of(context).title1.override(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
+                        'Hi,',
+                        style: FlutterFlowTheme.of(context).title3.override(
+                              fontFamily: 'Nunito',
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                             ),
                       ),
                     ),
@@ -91,9 +92,10 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                             currentUserDisplayName,
                             'Guest User',
                           ),
-                          style: FlutterFlowTheme.of(context).title1.override(
-                                fontFamily: 'Poppins',
-                                color: Colors.black,
+                          style: FlutterFlowTheme.of(context).title3.override(
+                                fontFamily: 'Nunito',
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
                               ),
                         ),
                       ),
@@ -121,8 +123,9 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Text(
                           'What would you like to do?',
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: 'Nunito',
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
                         ),
                       ],
@@ -136,7 +139,11 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('RegisterYourDecision');
+                              if (currentUserEmailVerified) {
+                                context.pushNamed('RegisterYourDecision');
+                              } else {
+                                context.pushNamed('Login');
+                              }
                             },
                             text: 'Register your decision',
                             options: FFButtonOptions(
@@ -146,7 +153,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,
@@ -179,7 +186,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,
@@ -212,7 +219,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,
@@ -245,7 +252,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,
@@ -278,7 +285,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,
@@ -301,9 +308,9 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('GetInvolved');
+                              context.pushNamed('SupportUs');
                             },
-                            text: 'Get involved',
+                            text: 'Support us',
                             options: FFButtonOptions(
                               width: 130,
                               height: 70,
@@ -311,7 +318,40 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
+                                    color: Color(0xFFB80000),
+                                  ),
+                              elevation: 4,
+                              borderSide: BorderSide(
+                                color: Color(0xFFB80000),
+                                width: 1,
+                              ),
+                              borderRadius: 12,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('KnowAboutUs');
+                            },
+                            text: 'Know about us',
+                            options: FFButtonOptions(
+                              width: 130,
+                              height: 70,
+                              color: Colors.white,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFFB80000),
                                   ),
                               elevation: 4,

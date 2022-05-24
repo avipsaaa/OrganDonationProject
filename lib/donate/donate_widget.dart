@@ -86,22 +86,22 @@ class _DonateWidgetState extends State<DonateWidget> {
         elevation: 2,
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                  child: Row(
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -109,17 +109,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                         child: Text(
                           'Register a decision to donate',
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: 'Nunito',
                                 color: Colors.black,
                               ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                  child: Row(
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
@@ -127,19 +124,17 @@ class _DonateWidgetState extends State<DonateWidget> {
                           'Use this form become and organ, eye and tissue donor. It will only take you a minute to get registered.',
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Nunito',
                                     color: Color(0xFF161819),
+                                    lineHeight: 1.5,
                                   ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Form(
-                  key: formKey,
-                  autovalidateMode: AutovalidateMode.always,
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                  Form(
+                    key: formKey,
+                    autovalidateMode: AutovalidateMode.always,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -153,7 +148,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Colors.black,
                                     ),
                               ),
@@ -186,14 +181,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   hintText: 'Enter your first name',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -214,7 +209,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Color(0xFF161819),
                                     ),
                                 maxLines: 1,
@@ -244,14 +239,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your middle name',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -278,7 +273,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -302,14 +297,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your last name',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -336,7 +331,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -366,7 +361,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  fontFamily: 'Nunito',
                                                   color: Color(0xFF161819),
                                                 ),
                                           ),
@@ -394,7 +389,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          fontFamily: 'Nunito',
                                                           color: Colors.black,
                                                         ),
                                                 buttonPosition:
@@ -430,7 +425,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Nunito',
                                             color: Color(0xFF161819),
                                           ),
                                     ),
@@ -466,7 +461,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: 'Nunito',
                                               color: Color(0xFF161819),
                                               fontSize: 14,
                                             ),
@@ -493,7 +488,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Colors.black,
                                     ),
                               ),
@@ -526,14 +521,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   hintText: 'Enter your address',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -554,7 +549,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Color(0xFF161819),
                                     ),
                                 maxLines: 1,
@@ -584,14 +579,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your address',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -612,7 +607,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -636,14 +631,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your city',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -664,7 +659,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -695,14 +690,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your province',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -723,7 +718,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -754,14 +749,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter zip code',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -782,7 +777,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -808,7 +803,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Colors.black,
                                     ),
                               ),
@@ -840,14 +835,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   hintText: 'Enter your email address',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -868,7 +863,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Color(0xFF161819),
                                     ),
                                 maxLines: 1,
@@ -899,14 +894,14 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     hintText: 'Enter your phone number',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -927,7 +922,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         color: Color(0xFF161819),
                                       ),
                                   maxLines: 1,
@@ -947,7 +942,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Nunito',
                                       color: Colors.black,
                                     ),
                               ),
@@ -977,7 +972,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Nunito',
                                           color: Color(0xFF161819),
                                         ),
                                   ),
@@ -1075,7 +1070,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .subtitle2
                                                   .override(
-                                                    fontFamily: 'Poppins',
+                                                    fontFamily: 'Nunito',
                                                     color: Colors.white,
                                                   ),
                                           elevation: 4,
@@ -1096,8 +1091,8 @@ class _DonateWidgetState extends State<DonateWidget> {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

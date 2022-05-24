@@ -91,7 +91,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'RegisterYourDecision',
               path: 'registerYourDecision',
-              requireAuth: true,
               builder: (context, params) => RegisterYourDecisionWidget(),
             ),
             FFRoute(
@@ -142,14 +141,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => BecomingALivingDonorWidget(),
             ),
             FFRoute(
-              name: 'GetInvolved',
-              path: 'getInvolved',
-              builder: (context, params) => GetInvolvedWidget(),
-            ),
-            FFRoute(
               name: 'NepalLaws',
               path: 'nepalLaws',
               builder: (context, params) => NepalLawsWidget(),
+            ),
+            FFRoute(
+              name: 'SupportUs',
+              path: 'supportUs',
+              builder: (context, params) => SupportUsWidget(),
+            ),
+            FFRoute(
+              name: 'KnowAboutUs',
+              path: 'knowAboutUs',
+              builder: (context, params) => KnowAboutUsWidget(),
+            ),
+            FFRoute(
+              name: 'HelpingYouDecide1',
+              path: 'helpingYouDecide1',
+              builder: (context, params) => HelpingYouDecide1Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

@@ -69,14 +69,14 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
                   'Forgot your password?',
                   style: FlutterFlowTheme.of(context).title2.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Lexend Deca',
                         color: Color(0xFFB80000),
                       ),
                 ),
@@ -94,10 +94,11 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                     child: Text(
                       'Don\'t worry! We will send you an email with a link to reset your password, please enter the email associated with your account below.',
                       style: FlutterFlowTheme.of(context).bodyText2.override(
-                            fontFamily: 'Outfit',
+                            fontFamily: 'Lexend Deca',
                             color: Color(0xFF57636C),
-                            fontSize: 14,
+                            fontSize: 15,
                             fontWeight: FontWeight.normal,
+                            lineHeight: 1.5,
                           ),
                     ),
                   ),
@@ -159,9 +160,9 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                       EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
                 ),
                 style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Outfit',
+                      fontFamily: 'Lexend Deca',
                       color: Color(0xFF0F1113),
-                      fontSize: 14,
+                      fontSize: 15,
                       fontWeight: FontWeight.normal,
                     ),
                 keyboardType: TextInputType.emailAddress,
@@ -204,7 +205,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                   height: 50,
                   color: Color(0xFFB80000),
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Outfit',
+                        fontFamily: 'Lexend Deca',
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

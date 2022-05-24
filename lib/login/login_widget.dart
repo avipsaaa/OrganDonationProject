@@ -361,15 +361,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   children: [
                                     InkWell(
                                       onTap: () async {
-                                        context.pushNamed('AppHome');
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        final user =
+                                            await signInAnonymously(context);
+                                        if (user == null) {
+                                          return;
+                                        }
+                                        context.goNamedAuth('AppHome', mounted);
                                       },
                                       child: Text(
                                         'Continue as a Guest',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1
+                                            .subtitle2
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: 'Lexend Deca',
                                               color: Color(0xFFB80000),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
                                             ),
                                       ),
                                     ),
@@ -378,7 +386,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -388,7 +396,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Lexend Deca',
                                             color: Color(0xFF57636C),
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500,

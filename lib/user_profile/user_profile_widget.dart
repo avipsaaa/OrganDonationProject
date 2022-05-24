@@ -131,10 +131,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xB4FFFFFF),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
+                                    fontFamily: 'Nunito',
+                                    color: Colors.white,
                                   ),
                             ),
                           ),
@@ -359,8 +357,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             'Terms of Services',
                             style:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Lexend Deca',
                                       color: Color(0xFF090F13),
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                           ),

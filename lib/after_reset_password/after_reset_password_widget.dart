@@ -48,7 +48,7 @@ class _AfterResetPasswordWidgetState extends State<AfterResetPasswordWidget> {
               Text(
                 'Link Sent!',
                 style: FlutterFlowTheme.of(context).title2.override(
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       fontSize: 32,
                     ),
@@ -58,15 +58,16 @@ class _AfterResetPasswordWidgetState extends State<AfterResetPasswordWidget> {
                 child: Text(
                   'Please check your email\nto reset your password.',
                   style: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Lexend Deca',
                         color: FlutterFlowTheme.of(context).primaryBtnText,
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w300,
+                        lineHeight: 1.5,
                       ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 44, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 34, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     context.pushNamed(
@@ -85,8 +86,9 @@ class _AfterResetPasswordWidgetState extends State<AfterResetPasswordWidget> {
                     height: 50,
                     color: FlutterFlowTheme.of(context).primaryBtnText,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: 'Lexend Deca',
                           color: Color(0xFFB80000),
+                          fontWeight: FontWeight.w600,
                         ),
                     elevation: 3,
                     borderSide: BorderSide(

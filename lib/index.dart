@@ -16,5 +16,8 @@ export 'talk_to_your_loved_ones/talk_to_your_loved_ones_widget.dart'
     show TalkToYourLovedOnesWidget;
 export 'becoming_a_living_donor/becoming_a_living_donor_widget.dart'
     show BecomingALivingDonorWidget;
-export 'get_involved/get_involved_widget.dart' show GetInvolvedWidget;
 export 'nepal_laws/nepal_laws_widget.dart' show NepalLawsWidget;
+export 'support_us/support_us_widget.dart' show SupportUsWidget;
+export 'know_about_us/know_about_us_widget.dart' show KnowAboutUsWidget;
+export 'helping_you_decide1/helping_you_decide1_widget.dart'
+    show HelpingYouDecide1Widget;
