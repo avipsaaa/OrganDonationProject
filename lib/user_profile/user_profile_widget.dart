@@ -1,8 +1,10 @@
 import '../auth/auth_util.dart';
+import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../flutter_flow/upload_media.dart';
 import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,6 +19,7 @@ class UserProfileWidget extends StatefulWidget {
 }
 
 class _UserProfileWidgetState extends State<UserProfileWidget> {
+  String uploadedFileUrl = '';
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -29,7 +32,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 160,
+            height: 200,
             decoration: BoxDecoration(
               color: Color(0xFFB80000),
             ),
@@ -47,14 +50,53 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                    child: InkWell(
+                      onTap: () async {
+                        final selectedMedia =
+                            await selectMediaWithSourceBottomSheet(
+                          context: context,
+                          maxWidth: 80.00,
+                          maxHeight: 80.00,
+                          imageQuality: 50,
+                          allowPhoto: true,
+                        );
+                        if (selectedMedia != null &&
+                            selectedMedia.every((m) =>
+                                validateFileFormat(m.storagePath, context))) {
+                          showUploadMessage(
+                            context,
+                            'Uploading file...',
+                            showLoading: true,
+                          );
+                          final downloadUrls = (await Future.wait(selectedMedia
+                                  .map((m) async => await uploadData(
+                                      m.storagePath, m.bytes))))
+                              .where((u) => u != null)
+                              .toList();
+                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                          if (downloadUrls != null &&
+                              downloadUrls.length == selectedMedia.length) {
+                            setState(
+                                () => uploadedFileUrl = downloadUrls.first);
+                            showUploadMessage(
+                              context,
+                              'Success!',
+                            );
+                          } else {
+                            showUploadMessage(
+                              context,
+                              'Failed to upload media',
+                            );
+                            return;
+                          }
+                        }
+                      },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          'assets/images/gxif9_600',
-                          width: 80,
-                          height: 80,
+                          'assets/images/userAvatar.jpg',
+                          width: 100,
+                          height: 100,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -316,7 +358,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                         children: [
                           Text(
                             'Terms of Services',
-                            style: FlutterFlowTheme.of(context).subtitle2,
+                            style:
+                                FlutterFlowTheme.of(context).subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFF090F13),
+                                      fontWeight: FontWeight.w500,
+                                    ),
                           ),
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,

@@ -56,6 +56,10 @@ abstract class DonorsRecord
   String get gender;
 
   @nullable
+  @BuiltValueField(wireName: 'd_id')
+  DocumentReference get dId;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -107,6 +111,7 @@ Map<String, dynamic> createDonorsRecordData({
   String donorEmail,
   String donorPhoneNumber,
   String gender,
+  DocumentReference dId,
 }) =>
     serializers.toFirestore(
         DonorsRecord.serializer,
@@ -122,4 +127,5 @@ Map<String, dynamic> createDonorsRecordData({
           ..zipCode = zipCode
           ..donorEmail = donorEmail
           ..donorPhoneNumber = donorPhoneNumber
-          ..gender = gender));
+          ..gender = gender
+          ..dId = dId));

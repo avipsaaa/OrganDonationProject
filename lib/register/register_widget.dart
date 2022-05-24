@@ -18,12 +18,12 @@ class RegisterWidget extends StatefulWidget {
 }
 
 class _RegisterWidgetState extends State<RegisterWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController registrationEmailAddressController;
   TextEditingController registrationNameController;
   TextEditingController registrationNumberController;
   TextEditingController registrationPasswordController;
   bool registrationPasswordVisibility;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -80,8 +80,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.network(
-                  'https://assets-global.website-files.com/60f12107f1cd88561a85a7a7/60f12107f1cd88618585a87c_thelifeyoucansave.jpg',
+                Image.asset(
+                  'assets/images/register.jpg',
                   width: 220,
                   height: 220,
                   fit: BoxFit.fill,
@@ -433,6 +433,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
+                                elevation: 3,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1,

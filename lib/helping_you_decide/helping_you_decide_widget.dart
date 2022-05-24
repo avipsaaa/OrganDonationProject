@@ -56,246 +56,186 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
         decoration: BoxDecoration(
           color: Colors.white,
         ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Image.asset(
+                'assets/images/hyd.jpg',
+                width: double.infinity,
+                height: 240,
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'We understand that you may have questions about organ donation.',
+                      textAlign: TextAlign.justify,
+                      style: FlutterFlowTheme.of(context).subtitle1.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
                     ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                      child: Text(
+                        'We\'re here to help support your decision, and have provided a selection of resources to help make sure you get the information you need.',
+                        textAlign: TextAlign.justify,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF161819),
+                              fontSize: 14,
+                            ),
+                      ),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'What can you donate?',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                    fontSize: 18,
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
                     ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'Who can donate?',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'Get the facts',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'Living Donation',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'Tissue Donation',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: ListTile(
+                        title: Text(
+                          'Understanding Consent',
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color(0xFF303030),
+                          size: 20,
+                        ),
+                        tileColor: Colors.black,
+                        dense: false,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                  child: ListTile(
-                    title: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    subtitle: Text(
-                      'Lorem ipsum dolor...',
-                      style: FlutterFlowTheme.of(context).subtitle2,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Colors.black,
-                    dense: false,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

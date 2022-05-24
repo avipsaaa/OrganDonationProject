@@ -18,10 +18,10 @@ class LoginWidget extends StatefulWidget {
 }
 
 class _LoginWidgetState extends State<LoginWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController loginEmailAddressController;
   TextEditingController loginPasswordController;
   bool loginPasswordVisibility;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -85,8 +85,8 @@ class _LoginWidgetState extends State<LoginWidget> {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 60, 0, 20),
-                  child: Image.network(
-                    'https://img.freepik.com/free-vector/charity-donation-concept-hands-volunteers-holding-giving-heart_74855-10499.jpg?t=st=1651658012~exp=1651658612~hmac=f36cb61b2945404a077a7330527db69edcb94c2a13eb825aa1415b9bea1a0cbc&w=1060',
+                  child: Image.asset(
+                    'assets/images/login.jpg',
                     width: double.infinity,
                     height: 280,
                     fit: BoxFit.cover,
@@ -349,6 +349,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
+                                  elevation: 3,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
@@ -378,8 +379,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                      color: Color(0xFF57636C),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                     ),

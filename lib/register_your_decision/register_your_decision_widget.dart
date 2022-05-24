@@ -1,5 +1,3 @@
-import '../amend/amend_widget.dart';
-import '../do_not_donate/do_not_donate_widget.dart';
 import '../donate/donate_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -72,7 +70,7 @@ class _RegisterYourDecisionWidgetState
               Image.asset(
                 'assets/images/registerToDonate.jpg',
                 width: double.infinity,
-                height: 180,
+                height: 370,
                 fit: BoxFit.cover,
               ),
               Padding(
@@ -104,8 +102,14 @@ class _RegisterYourDecisionWidgetState
                         children: [
                           Expanded(
                             child: Text(
-                              '1. Whatever you decide, please talk to your loved ones. They will always be consulted, and can overturn your decision if they aren\'t sure what you want\n2. Organ donation in some parts of the Nepal has changed. See how the changes affect you\n3. To donate only some organs, register a decision and record your preferences.\n4. Withdrawing your name from the Afterlife Organ Donor Registration is not the same as recording a decision not to donate.',
-                              style: FlutterFlowTheme.of(context).bodyText1,
+                              'Whatever you decide, please talk to your loved ones. They will always be consulted, and can overturn your decision if they aren\'t sure what you want. \nOrgan donation in some parts of the Nepal has changed. See how the changes affect you. \nWithdrawing your name from the Afterlife Organ Donor Registration is not the same as recording a decision not to donate.',
+                              textAlign: TextAlign.justify,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF161819),
+                                  ),
                             ),
                           ),
                         ],
@@ -145,91 +149,6 @@ class _RegisterYourDecisionWidgetState
                                 elevation: 4,
                                 borderSide: BorderSide(
                                   color: Color(0xFF166F32),
-                                  width: 1,
-                                ),
-                                borderRadius: 12,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DoNotDonateWidget(),
-                                  ),
-                                );
-                              },
-                              text: 'Do not donate',
-                              icon: Icon(
-                                Icons.block,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              options: FFButtonOptions(
-                                width: 130,
-                                height: 70,
-                                color: Color(0xFFB80000),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 4,
-                                borderSide: BorderSide(
-                                  color: Color(0xFFB80000),
-                                  width: 1,
-                                ),
-                                borderRadius: 12,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AmendWidget(),
-                                  ),
-                                );
-                              },
-                              text: 'Amend',
-                              icon: Icon(
-                                Icons.edit,
-                                size: 20,
-                              ),
-                              options: FFButtonOptions(
-                                width: 130,
-                                height: 70,
-                                color: Color(0xFF3F3F3F),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 4,
-                                borderSide: BorderSide(
-                                  color: Color(0xFF3F3F3F),
                                   width: 1,
                                 ),
                                 borderRadius: 12,

@@ -15,8 +15,8 @@ class ResetPasswordWidget extends StatefulWidget {
 }
 
 class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController resetEmailAddressController;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -59,8 +59,8 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.network(
-                  'https://img.freepik.com/free-vector/cute-panda-forgot-password-vector-icon-illustration_138676-419.jpg?w=900',
+                Image.asset(
+                  'assets/images/resetPassword.jpg',
                   width: 300,
                   height: 300,
                   fit: BoxFit.cover,

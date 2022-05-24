@@ -39,8 +39,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Image.network(
-                    'https://img.freepik.com/free-photo/man-holds-heart-blue-space-close-up-health-care-organ-donation_185193-5136.jpg?w=1060',
+                  child: Image.asset(
+                    'assets/images/home.jpg',
                     width: double.infinity,
                     height: 600,
                     fit: BoxFit.cover,
