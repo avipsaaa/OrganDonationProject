@@ -1,13 +1,14 @@
 // Export pages
 export 'app_home/app_home_widget.dart' show AppHomeWidget;
 export 'user_profile/user_profile_widget.dart' show UserProfileWidget;
-export 'home_page/home_page_widget.dart' show HomePageWidget;
 export 'register_your_decision/register_your_decision_widget.dart'
     show RegisterYourDecisionWidget;
 export 'donate/donate_widget.dart' show DonateWidget;
-export 'register/register_widget.dart' show RegisterWidget;
 export 'login/login_widget.dart' show LoginWidget;
+export 'register/register_widget.dart' show RegisterWidget;
 export 'reset_password/reset_password_widget.dart' show ResetPasswordWidget;
+export 'after_reset_password/after_reset_password_widget.dart'
+    show AfterResetPasswordWidget;
 export 'withdraw/withdraw_widget.dart' show WithdrawWidget;
 export 'helping_you_decide/helping_you_decide_widget.dart'
     show HelpingYouDecideWidget;

@@ -33,7 +33,7 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         title: Text(

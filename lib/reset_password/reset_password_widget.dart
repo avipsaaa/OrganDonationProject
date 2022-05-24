@@ -42,7 +42,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         actions: [],
@@ -187,6 +187,15 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                   await resetPassword(
                     email: resetEmailAddressController.text,
                     context: context,
+                  );
+                  context.goNamed(
+                    'AfterResetPassword',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                      ),
+                    },
                   );
                 },
                 text: 'Send Link',

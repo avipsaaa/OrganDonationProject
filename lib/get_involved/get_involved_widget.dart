@@ -33,7 +33,7 @@ class _GetInvolvedWidgetState extends State<GetInvolvedWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         title: Text(

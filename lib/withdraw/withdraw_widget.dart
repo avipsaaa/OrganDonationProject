@@ -35,7 +35,7 @@ class _WithdrawWidgetState extends State<WithdrawWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         title: Text(

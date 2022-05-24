@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -390,14 +389,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 40),
             child: FFButtonWidget(
               onPressed: () async {
+                GoRouter.of(context).prepareAuthEvent();
                 await signOut();
-                await Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePageWidget(),
-                  ),
-                  (r) => false,
-                );
+                context.goNamedAuth('Login', mounted);
               },
               text: 'Log Out',
               options: FFButtonOptions(

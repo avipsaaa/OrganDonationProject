@@ -34,7 +34,7 @@ class _TalkToYourLovedOnesWidgetState extends State<TalkToYourLovedOnesWidget> {
             size: 30,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         title: Text(

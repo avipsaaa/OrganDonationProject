@@ -1,15 +1,8 @@
 import '../auth/auth_util.dart';
-import '../becoming_a_living_donor/becoming_a_living_donor_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../get_involved/get_involved_widget.dart';
-import '../helping_you_decide/helping_you_decide_widget.dart';
-import '../login/login_widget.dart';
-import '../nepal_laws/nepal_laws_widget.dart';
-import '../register_your_decision/register_your_decision_widget.dart';
-import '../talk_to_your_loved_ones/talk_to_your_loved_ones_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -143,30 +136,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              if (currentUserEmailVerified) {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    duration: Duration(milliseconds: 300),
-                                    reverseDuration:
-                                        Duration(milliseconds: 300),
-                                    child: RegisterYourDecisionWidget(),
-                                  ),
-                                );
-                              } else {
-                                await Navigator.pushAndRemoveUntil(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.leftToRight,
-                                    duration: Duration(milliseconds: 300),
-                                    reverseDuration:
-                                        Duration(milliseconds: 300),
-                                    child: LoginWidget(),
-                                  ),
-                                  (r) => false,
-                                );
-                              }
+                              context.pushNamed('RegisterYourDecision');
                             },
                             text: 'Register your decision',
                             options: FFButtonOptions(
@@ -199,13 +169,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      HelpingYouDecideWidget(),
-                                ),
-                              );
+                              context.pushNamed('HelpingYouDecide');
                             },
                             text: 'Helping you decide',
                             options: FFButtonOptions(
@@ -238,13 +202,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      TalkToYourLovedOnesWidget(),
-                                ),
-                              );
+                              context.pushNamed('TalkToYourLovedOnes');
                             },
                             text: 'Talk to you loved ones',
                             options: FFButtonOptions(
@@ -277,12 +235,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NepalLawsWidget(),
-                                ),
-                              );
+                              context.pushNamed('NepalLaws');
                             },
                             text: 'Nepal Laws',
                             options: FFButtonOptions(
@@ -315,13 +268,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      BecomingALivingDonorWidget(),
-                                ),
-                              );
+                              context.pushNamed('BecomingALivingDonor');
                             },
                             text: 'Becoming a living donor',
                             options: FFButtonOptions(
@@ -354,12 +301,7 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => GetInvolvedWidget(),
-                                ),
-                              );
+                              context.pushNamed('GetInvolved');
                             },
                             text: 'Get involved',
                             options: FFButtonOptions(
