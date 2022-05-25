@@ -94,39 +94,49 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'What can you donate?',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('WhatCanYouDonate');
+                          },
+                          child: ListTile(
+                            title: Text(
+                              'What can you donate?',
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Colors.black,
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Who can donate?',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('WhoCanDonate');
+                          },
+                          child: ListTile(
+                            title: Text(
+                              'Who can donate?',
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Colors.black,
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
                       ),
@@ -151,39 +161,49 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Living Donation',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('BecomingALivingDonor');
+                          },
+                          child: ListTile(
+                            title: Text(
+                              'Living Donation',
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Colors.black,
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Tissue Donation',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('TissueDonation');
+                          },
+                          child: ListTile(
+                            title: Text(
+                              'Tissue Donation',
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Colors.black,
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
                       ),

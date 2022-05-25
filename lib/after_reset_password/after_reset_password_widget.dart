@@ -35,8 +35,8 @@ class _AfterResetPasswordWidgetState extends State<AfterResetPasswordWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Lottie.network(
-                      'https://assets6.lottiefiles.com/packages/lf20_smjadvtz.json',
+                    Lottie.asset(
+                      'assets/lottie_animations/mailSent.json',
                       width: 150,
                       height: 130,
                       fit: BoxFit.cover,

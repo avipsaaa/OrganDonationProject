@@ -131,14 +131,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => HelpingYouDecideWidget(),
             ),
             FFRoute(
+              name: 'WhatCanYouDonate',
+              path: 'whatCanYouDonate',
+              builder: (context, params) => WhatCanYouDonateWidget(),
+            ),
+            FFRoute(
               name: 'TalkToYourLovedOnes',
               path: 'talkToYourLovedOnes',
               builder: (context, params) => TalkToYourLovedOnesWidget(),
-            ),
-            FFRoute(
-              name: 'BecomingALivingDonor',
-              path: 'becomingALivingDonor',
-              builder: (context, params) => BecomingALivingDonorWidget(),
             ),
             FFRoute(
               name: 'NepalLaws',
@@ -156,9 +156,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => KnowAboutUsWidget(),
             ),
             FFRoute(
-              name: 'HelpingYouDecide1',
-              path: 'helpingYouDecide1',
-              builder: (context, params) => HelpingYouDecide1Widget(),
+              name: 'HeartDonation',
+              path: 'heartDonation',
+              builder: (context, params) => HeartDonationWidget(),
+            ),
+            FFRoute(
+              name: 'LungsDonation',
+              path: 'lungsDonation',
+              builder: (context, params) => LungsDonationWidget(),
+            ),
+            FFRoute(
+              name: 'LiverDonation',
+              path: 'liverDonation',
+              builder: (context, params) => LiverDonationWidget(),
+            ),
+            FFRoute(
+              name: 'KidneyDonation',
+              path: 'kidneyDonation',
+              builder: (context, params) => KidneyDonationWidget(),
+            ),
+            FFRoute(
+              name: 'PancreasDonation',
+              path: 'pancreasDonation',
+              builder: (context, params) => PancreasDonationWidget(),
+            ),
+            FFRoute(
+              name: 'SmallBowelDonation',
+              path: 'smallBowelDonation',
+              builder: (context, params) => SmallBowelDonationWidget(),
+            ),
+            FFRoute(
+              name: 'TissueDonation',
+              path: 'tissueDonation',
+              builder: (context, params) => TissueDonationWidget(),
+            ),
+            FFRoute(
+              name: 'WhoCanDonate',
+              path: 'whoCanDonate',
+              builder: (context, params) => WhoCanDonateWidget(),
+            ),
+            FFRoute(
+              name: 'BecomingALivingDonor',
+              path: 'becomingALivingDonor',
+              builder: (context, params) => BecomingALivingDonorWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -329,7 +369,7 @@ class FFRoute {
                         'assets/images/logo.jpg',
                         width: 300,
                         height: 100,
-                        fit: BoxFit.scaleDown,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),

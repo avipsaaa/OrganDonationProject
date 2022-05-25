@@ -5,15 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HelpingYouDecide1Widget extends StatefulWidget {
-  const HelpingYouDecide1Widget({Key key}) : super(key: key);
+class WhatCanYouDonateWidget extends StatefulWidget {
+  const WhatCanYouDonateWidget({Key key}) : super(key: key);
 
   @override
-  _HelpingYouDecide1WidgetState createState() =>
-      _HelpingYouDecide1WidgetState();
+  _WhatCanYouDonateWidgetState createState() => _WhatCanYouDonateWidgetState();
 }
 
-class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
+class _WhatCanYouDonateWidgetState extends State<WhatCanYouDonateWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -64,9 +63,9 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Image.asset(
-                  'assets/images/hyd.jpg',
+                  'assets/images/humanOrgans.jpg',
                   width: double.infinity,
-                  height: 240,
+                  height: 250,
                   fit: BoxFit.cover,
                 ),
                 Padding(
@@ -93,11 +92,13 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
                                   ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('HeartDonation');
+                        },
                         child: ListTile(
                           title: Text(
-                            'What can you donate?',
+                            'Heart Donation',
                             style: FlutterFlowTheme.of(context).subtitle2,
                           ),
                           trailing: Icon(
@@ -112,11 +113,13 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('LungsDonation');
+                        },
                         child: ListTile(
                           title: Text(
-                            'Who can donate?',
+                            'Lungs Donation',
                             style: FlutterFlowTheme.of(context).subtitle2,
                           ),
                           trailing: Icon(
@@ -131,11 +134,13 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('LiverDonation');
+                        },
                         child: ListTile(
                           title: Text(
-                            'Get the facts',
+                            'Liver Donation',
                             style: FlutterFlowTheme.of(context).subtitle2,
                           ),
                           trailing: Icon(
@@ -150,11 +155,13 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('KidneyDonation');
+                        },
                         child: ListTile(
                           title: Text(
-                            'Living Donation',
+                            'Donating your Kidneys',
                             style: FlutterFlowTheme.of(context).subtitle2,
                           ),
                           trailing: Icon(
@@ -169,30 +176,55 @@ class _HelpingYouDecide1WidgetState extends State<HelpingYouDecide1Widget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('PancreasDonation');
+                        },
+                        child: ListTile(
+                          title: Text(
+                            'Donating your Pancreas',
+                            style: FlutterFlowTheme.of(context).subtitle2,
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF303030),
+                            size: 20,
+                          ),
+                          tileColor: Colors.black,
+                          dense: false,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('PancreasDonation');
+                        },
+                        child: ListTile(
+                          title: Text(
+                            'Donating your Small Bowel',
+                            style: FlutterFlowTheme.of(context).subtitle2,
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF303030),
+                            size: 20,
+                          ),
+                          tileColor: Colors.black,
+                          dense: false,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          context.pushNamed('TissueDonation');
+                        },
                         child: ListTile(
                           title: Text(
                             'Tissue Donation',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Understanding Consent',
                             style: FlutterFlowTheme.of(context).subtitle2,
                           ),
                           trailing: Icon(

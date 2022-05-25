@@ -35,7 +35,7 @@ class _SupportUsWidgetState extends State<SupportUsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFB80000),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -43,23 +43,27 @@ class _SupportUsWidgetState extends State<SupportUsWidget> {
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
-            Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).primaryText,
+            Icons.arrow_back,
+            color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.pop();
           },
         ),
         title: Text(
-          'Subscription',
-          style: FlutterFlowTheme.of(context).bodyText1,
+          'Support Us',
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Poppins',
+                color: Colors.white,
+                fontSize: 22,
+              ),
         ),
         actions: [],
-        centerTitle: true,
-        elevation: 0,
+        centerTitle: false,
+        elevation: 2,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

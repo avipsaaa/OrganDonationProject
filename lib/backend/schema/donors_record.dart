@@ -60,6 +60,9 @@ abstract class DonorsRecord
   DocumentReference get dId;
 
   @nullable
+  bool get isRegistered;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -75,7 +78,8 @@ abstract class DonorsRecord
     ..zipCode = ''
     ..donorEmail = ''
     ..donorPhoneNumber = ''
-    ..gender = '';
+    ..gender = ''
+    ..isRegistered = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('donors');
@@ -112,6 +116,7 @@ Map<String, dynamic> createDonorsRecordData({
   String donorPhoneNumber,
   String gender,
   DocumentReference dId,
+  bool isRegistered,
 }) =>
     serializers.toFirestore(
         DonorsRecord.serializer,
@@ -128,4 +133,5 @@ Map<String, dynamic> createDonorsRecordData({
           ..donorEmail = donorEmail
           ..donorPhoneNumber = donorPhoneNumber
           ..gender = gender
-          ..dId = dId));
+          ..dId = dId
+          ..isRegistered = isRegistered));
