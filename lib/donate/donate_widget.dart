@@ -1007,6 +1007,20 @@ class _DonateWidgetState extends State<DonateWidget> {
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () async {
+                                            if (formKey.currentState == null ||
+                                                !formKey.currentState
+                                                    .validate()) {
+                                              return;
+                                            }
+                                            if (radioButtonGenderValue ==
+                                                null) {
+                                              return;
+                                            }
+
+                                            if (datePicked == null) {
+                                              return;
+                                            }
+
                                             var confirmDialogResponse =
                                                 await showDialog<bool>(
                                                       context: context,

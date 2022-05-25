@@ -6,6 +6,8 @@ import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
 import '../../backend/backend.dart';
 import '../../auth/firebase_user_provider.dart';
+import '../../backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 
 import '../../index.dart';
 import '../../main.dart';
@@ -17,8 +19,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  FYPOrganDonationFirebaseUser initialUser;
-  FYPOrganDonationFirebaseUser user;
+  AfterLifeFirebaseUser initialUser;
+  AfterLifeFirebaseUser user;
   bool showSplashImage = true;
   String _redirectLocation;
 
@@ -43,7 +45,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(FYPOrganDonationFirebaseUser newUser) {
+  void update(AfterLifeFirebaseUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -126,14 +128,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => WithdrawWidget(),
             ),
             FFRoute(
+              name: 'WhatCanYouDonate',
+              path: 'whatCanYouDonate',
+              builder: (context, params) => WhatCanYouDonateWidget(),
+            ),
+            FFRoute(
               name: 'HelpingYouDecide',
               path: 'helpingYouDecide',
               builder: (context, params) => HelpingYouDecideWidget(),
             ),
             FFRoute(
-              name: 'WhatCanYouDonate',
-              path: 'whatCanYouDonate',
-              builder: (context, params) => WhatCanYouDonateWidget(),
+              name: 'HeartDonation',
+              path: 'heartDonation',
+              builder: (context, params) => HeartDonationWidget(),
             ),
             FFRoute(
               name: 'TalkToYourLovedOnes',
@@ -154,11 +161,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'KnowAboutUs',
               path: 'knowAboutUs',
               builder: (context, params) => KnowAboutUsWidget(),
-            ),
-            FFRoute(
-              name: 'HeartDonation',
-              path: 'heartDonation',
-              builder: (context, params) => HeartDonationWidget(),
             ),
             FFRoute(
               name: 'LungsDonation',
@@ -191,14 +193,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => TissueDonationWidget(),
             ),
             FFRoute(
+              name: 'BecomingALivingDonor',
+              path: 'becomingALivingDonor',
+              builder: (context, params) => BecomingALivingDonorWidget(),
+            ),
+            FFRoute(
               name: 'WhoCanDonate',
               path: 'whoCanDonate',
               builder: (context, params) => WhoCanDonateWidget(),
             ),
             FFRoute(
-              name: 'BecomingALivingDonor',
-              path: 'becomingALivingDonor',
-              builder: (context, params) => BecomingALivingDonorWidget(),
+              name: 'Consent',
+              path: 'consent',
+              builder: (context, params) => ConsentWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -374,7 +381,7 @@ class FFRoute {
                     ),
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

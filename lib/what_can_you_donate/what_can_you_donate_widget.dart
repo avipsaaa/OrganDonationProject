@@ -199,7 +199,7 @@ class _WhatCanYouDonateWidgetState extends State<WhatCanYouDonateWidget> {
                       ),
                       InkWell(
                         onTap: () async {
-                          context.pushNamed('PancreasDonation');
+                          context.pushNamed('SmallBowelDonation');
                         },
                         child: ListTile(
                           title: Text(

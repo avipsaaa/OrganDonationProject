@@ -1,4 +1,4 @@
-# FYP-Organ-Donation
+# AfterLife
 
 A new Flutter project.
 

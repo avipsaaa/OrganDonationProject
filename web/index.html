@@ -20,13 +20,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="FYP-Organ-Donation">
+  <meta name="apple-mobile-web-app-title" content="AfterLife">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>FYP-Organ-Donation</title>
+  <title>AfterLife</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -45,8 +45,8 @@
   
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  
-  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
 
   <script>
     const firebaseConfig = {
@@ -55,7 +55,8 @@
       projectId: "fyp-organ-donation-afd01",
       storageBucket: "fyp-organ-donation-afd01.appspot.com",
       messagingSenderId: "548681749901",
-      appId: "1:548681749901:web:37cf3ab31db4dc205999c4"
+      appId: "1:548681749901:web:37cf3ab31db4dc205999c4",
+      measurementId: "G-690S0LB5G6"
     }
     firebase.initializeApp(firebaseConfig);
   </script>

@@ -65,7 +65,7 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
                 Image.asset(
                   'assets/images/hyd.jpg',
                   width: double.infinity,
-                  height: 240,
+                  height: 260,
                   fit: BoxFit.cover,
                 ),
                 Padding(
@@ -142,25 +142,6 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Get the facts',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: InkWell(
                           onTap: () async {
                             context.pushNamed('BecomingALivingDonor');
@@ -209,20 +190,25 @@ class _HelpingYouDecideWidgetState extends State<HelpingYouDecideWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                        child: ListTile(
-                          title: Text(
-                            'Understanding Consent',
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Colors.black,
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('Consent');
+                          },
+                          child: ListTile(
+                            title: Text(
+                              'Understanding Consent',
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Colors.black,
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
                       ),

@@ -71,15 +71,24 @@ class _TissueDonationWidgetState extends State<TissueDonationWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Tissue Donation',
-                        textAlign: TextAlign.justify,
-                        style: FlutterFlowTheme.of(context).title3,
+                      Image.asset(
+                        'assets/images/tissue.jpg',
+                        width: double.infinity,
+                        height: 260,
+                        fit: BoxFit.cover,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        child: Text(
+                          'Tissue Donation',
+                          textAlign: TextAlign.justify,
+                          style: FlutterFlowTheme.of(context).title3,
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                         child: Text(
-                          'Human tissue consists of cells within the body that are similar in appearance and have the same function. Donating tissue can dramatically improve the quality of life for others. As many as 50 people can be helped by the donation from one person.\n\nMany kinds of tissue can be donated after death including skin, tendons, bone, heart valves and eyes to help repair or rebuild the lives of thousands of severely injured people. It is also possible to donate bone or amniotic membrane (part of the placenta) in certain hospitals while you are alive, during hip surgery or an elective caesarean.\n\nUnlike organ donation, you don’t need to die in a hospital intensive care unit or emergency department to donate tissue after death. Almost anyone can be considered for tissue donation, and donation needs to take place within 24 - 48 hours of death. To ensure that all donated tissues are safe, the donor’s medical and lifestyle history is assessed at the time of donation.',
+                          'Human tissue consists of cells within the body that are similar in appearance and have the same function. Donating tissue can dramatically improve the quality of life for others. As many as 50 people can be helped by the donation from one person.\n\nMany kinds of tissue can be donated after death including skin, tendons, bone, heart valves and eyes to help repair or rebuild the lives of thousands of severely injured people.\n\nUnlike organ donation, you don’t need to die in a hospital intensive care unit or emergency department to donate tissue after death. Almost anyone can be considered for tissue donation, and donation needs to take place within 24 - 48 hours of death. To ensure that all donated tissues are safe, the donor’s medical and lifestyle history is assessed at the time of donation.',
                           textAlign: TextAlign.justify,
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
@@ -99,7 +108,28 @@ class _TissueDonationWidgetState extends State<TissueDonationWidget> {
                                 if (currentUserEmailVerified) {
                                   context.pushNamed('RegisterYourDecision');
                                 } else {
-                                  context.pushNamed('Login');
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'You are not logged in!',
+                                        style: GoogleFonts.getFont(
+                                          'Lexend Deca',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor: Colors.black,
+                                      action: SnackBarAction(
+                                        label: 'Login',
+                                        textColor: Colors.white,
+                                        onPressed: () async {
+                                          context.pushNamed('Login');
+                                        },
+                                      ),
+                                    ),
+                                  );
                                 }
                               },
                               text: 'Register Now!',

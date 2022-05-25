@@ -99,7 +99,28 @@ class _HeartDonationWidgetState extends State<HeartDonationWidget> {
                                 if (currentUserEmailVerified) {
                                   context.pushNamed('RegisterYourDecision');
                                 } else {
-                                  context.pushNamed('Login');
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'You are not logged in!',
+                                        style: GoogleFonts.getFont(
+                                          'Lexend Deca',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor: Colors.black,
+                                      action: SnackBarAction(
+                                        label: 'Login',
+                                        textColor: Colors.white,
+                                        onPressed: () async {
+                                          context.pushNamed('Login');
+                                        },
+                                      ),
+                                    ),
+                                  );
                                 }
                               },
                               text: 'Register Now!',
