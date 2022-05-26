@@ -53,13 +53,13 @@ class _LoginWidgetState extends State<LoginWidget> {
           ),
           child: Align(
             alignment: AlignmentDirectional(0, 1),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Stack(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Stack(
                     children: [
                       Image.asset(
                         'assets/images/login.jpg',
@@ -377,7 +377,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               fontFamily: 'Lexend Deca',
                                               color: Color(0xFFB80000),
                                               fontSize: 16,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                             ),
                                       ),
                                     ),
@@ -447,8 +447,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
