@@ -117,10 +117,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               style:
                                   FlutterFlowTheme.of(context).title3.override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Nunito',
                                         color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22,
                                       ),
                             ),
                           ),
@@ -145,30 +144,28 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 22, 0, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Material(
-                  color: Colors.transparent,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 60,
-                    decoration: BoxDecoration(
+                    border: Border.all(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 0,
-                      ),
+                      width: 0,
                     ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                    child: InkWell(
+                      onTap: () async {
+                        context.pushNamed('ChangePassword');
+                      },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,10 +174,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             'Change Password',
                             style:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Nunito',
                                       color: Color(0xFF090F13),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
                                     ),
                           ),
                           FlutterFlowIconButton(
@@ -190,7 +187,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF95A1AC),
-                              size: 20,
+                              size: 24,
                             ),
                             onPressed: () {
                               print('IconButton pressed ...');
@@ -210,25 +207,23 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Material(
-                  color: Colors.transparent,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 60,
-                    decoration: BoxDecoration(
+                    border: Border.all(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 0,
-                      ),
+                      width: 0,
                     ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                    child: InkWell(
+                      onTap: () async {
+                        context.pushNamed('NotificationSettings');
+                      },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -237,10 +232,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             'Notification Settings',
                             style:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Nunito',
                                       color: Color(0xFF090F13),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
                                     ),
                           ),
                           FlutterFlowIconButton(
@@ -250,7 +245,104 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF95A1AC),
-                              size: 20,
+                              size: 24,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 0,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
+                    child: InkWell(
+                      onTap: () async {
+                        var confirmDialogResponse = await showDialog<bool>(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Delete Account'),
+                                  content: Text(
+                                      'Pressing confirm will delete your account. You will not be able to retrieve it later.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, false),
+                                      child: Text('Cancel'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, true),
+                                      child: Text('Confirm'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ) ??
+                            false;
+                        await deleteUser(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Account deletion successful!',
+                              style: GoogleFonts.getFont(
+                                'Lexend Deca',
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor: Colors.black,
+                          ),
+                        );
+                        context.goNamedAuth('AppHome', mounted);
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Delete Account',
+                            style:
+                                FlutterFlowTheme.of(context).subtitle2.override(
+                                      fontFamily: 'Nunito',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30,
+                            buttonSize: 46,
+                            icon: Icon(
+                              Icons.chevron_right_rounded,
+                              color: Color(0xFF95A1AC),
+                              size: 24,
                             ),
                             onPressed: () {
                               print('IconButton pressed ...');
@@ -278,10 +370,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                 height: 50,
                 color: Colors.white,
                 textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                      fontFamily: 'Lexend Deca',
+                      fontFamily: 'Nunito',
                       color: Color(0xFF090F13),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
                     ),
                 elevation: 3,
                 borderSide: BorderSide(

@@ -211,6 +211,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'AdminPage',
               path: 'adminPage',
               builder: (context, params) => AdminPageWidget(),
+            ),
+            FFRoute(
+              name: 'NotificationSettings',
+              path: 'notificationSettings',
+              builder: (context, params) => NotificationSettingsWidget(),
+            ),
+            FFRoute(
+              name: 'ChangePassword',
+              path: 'changePassword',
+              builder: (context, params) => ChangePasswordWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

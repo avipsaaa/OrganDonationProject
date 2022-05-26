@@ -107,6 +107,8 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'WhoCanDonate': (data) async => WhoCanDonateWidget(),
   'Consent': (data) async => ConsentWidget(),
   'AdminPage': (data) async => AdminPageWidget(),
+  'NotificationSettings': (data) async => NotificationSettingsWidget(),
+  'ChangePassword': (data) async => ChangePasswordWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

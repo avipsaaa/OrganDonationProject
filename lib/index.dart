@@ -33,3 +33,6 @@ export 'becoming_a_living_donor/becoming_a_living_donor_widget.dart'
 export 'who_can_donate/who_can_donate_widget.dart' show WhoCanDonateWidget;
 export 'consent/consent_widget.dart' show ConsentWidget;
 export 'admin_page/admin_page_widget.dart' show AdminPageWidget;
+export 'notification_settings/notification_settings_widget.dart'
+    show NotificationSettingsWidget;
+export 'change_password/change_password_widget.dart' show ChangePasswordWidget;

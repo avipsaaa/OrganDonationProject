@@ -56,7 +56,7 @@ class _SupportUsWidgetState extends State<SupportUsWidget> {
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 18,
               ),
         ),
         actions: [],
