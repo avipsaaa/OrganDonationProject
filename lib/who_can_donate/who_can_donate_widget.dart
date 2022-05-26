@@ -65,6 +65,7 @@ class _WhoCanDonateWidgetState extends State<WhoCanDonateWidget> {
               children: [
                 ListView(
                   padding: EdgeInsets.zero,
+                  primary: false,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [

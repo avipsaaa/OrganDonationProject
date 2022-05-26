@@ -69,119 +69,130 @@ class _BecomingALivingDonorWidgetState
               children: [
                 ListView(
                   padding: EdgeInsets.zero,
+                  primary: false,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                          'assets/images/livingDonor.jpg',
-                          width: double.infinity,
-                          height: 270,
-                          fit: BoxFit.cover,
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Text(
-                                'Become a living donor',
-                                textAlign: TextAlign.justify,
-                                style: FlutterFlowTheme.of(context).title3,
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                                child: Text(
-                                  'All over Nepal, more than 350 people each year donate a kidney or part of their liver while they are still alive to a relative, friend or someone they do not know.\n\nThe most commonly donated organ by a living person is a kidney. A healthy person can lead a normal life with only one functioning kidney and therefore they are able to donate the other to help someone in need of a kidney transplant. Part of a liver can also be transplanted from a living donor to help someone in need of a liver transplant.',
-                                  textAlign: TextAlign.justify,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Nunito',
-                                        lineHeight: 1.5,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        if (currentUserEmailVerified) {
-                                          context.pushNamed(
-                                              'RegisterYourDecision');
-                                        } else {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'You are not logged in!',
-                                                style: GoogleFonts.getFont(
-                                                  'Lexend Deca',
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor: Colors.black,
-                                              action: SnackBarAction(
-                                                label: 'Login',
-                                                textColor: Colors.white,
-                                                onPressed: () async {
-                                                  context.pushNamed('Login');
-                                                },
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                      },
-                                      text: 'Register Now!',
-                                      options: FFButtonOptions(
-                                        width: 180,
-                                        height: 50,
-                                        color: Color(0xFFB80000),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .subtitle2
-                                            .override(
-                                              fontFamily: 'Nunito',
-                                              color: Colors.white,
-                                            ),
-                                        elevation: 6,
-                                        borderSide: BorderSide(
-                                          color: Color(0xFFB32828),
-                                          width: 1,
-                                        ),
-                                        borderRadius: 8,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
-                                child: Text(
-                                  'What can I donate?',
-                                  textAlign: TextAlign.justify,
-                                  style: FlutterFlowTheme.of(context).title3,
-                                ),
-                              ),
-                            ],
+                    SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(
+                            'assets/images/livingDonor.jpg',
+                            width: double.infinity,
+                            height: 270,
+                            fit: BoxFit.cover,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
+                            child: SingleChildScrollView(
+                              primary: false,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    'Become a living donor',
+                                    textAlign: TextAlign.justify,
+                                    style: FlutterFlowTheme.of(context).title3,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 4, 0, 0),
+                                    child: Text(
+                                      'All over Nepal, more than 350 people each year donate a kidney or part of their liver while they are still alive to a relative, friend or someone they do not know.\n\nThe most commonly donated organ by a living person is a kidney. A healthy person can lead a normal life with only one functioning kidney and therefore they are able to donate the other to help someone in need of a kidney transplant. Part of a liver can also be transplanted from a living donor to help someone in need of a liver transplant.',
+                                      textAlign: TextAlign.justify,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Nunito',
+                                            lineHeight: 1.5,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            if (currentUserEmailVerified) {
+                                              context.pushNamed(
+                                                  'RegisterYourDecision');
+                                            } else {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'You are not logged in!',
+                                                    style: GoogleFonts.getFont(
+                                                      'Lexend Deca',
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor: Colors.black,
+                                                  action: SnackBarAction(
+                                                    label: 'Login',
+                                                    textColor: Colors.white,
+                                                    onPressed: () async {
+                                                      context
+                                                          .pushNamed('Login');
+                                                    },
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                          },
+                                          text: 'Register Now!',
+                                          options: FFButtonOptions(
+                                            width: 180,
+                                            height: 50,
+                                            color: Color(0xFFB80000),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Nunito',
+                                                      color: Colors.white,
+                                                    ),
+                                            elevation: 6,
+                                            borderSide: BorderSide(
+                                              color: Color(0xFFB32828),
+                                              width: 1,
+                                            ),
+                                            borderRadius: 8,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 30, 0, 0),
+                                    child: Text(
+                                      'What can I donate?',
+                                      textAlign: TextAlign.justify,
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),

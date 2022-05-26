@@ -66,10 +66,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         fit: BoxFit.cover,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 280, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 250, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: 530,
+                          height: 560,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
