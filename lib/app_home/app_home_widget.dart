@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,19 @@ class AppHomeWidget extends StatefulWidget {
 
 class _AppHomeWidgetState extends State<AppHomeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    // On page load action.
+    SchedulerBinding.instance?.addPostFrameCallback((_) async {
+      if ((currentUserEmail) == 'admin@admin.com') {
+        context.goNamed('AdminPage');
+      } else {
+        return;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

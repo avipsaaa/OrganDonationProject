@@ -85,8 +85,8 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'UserProfile': (data) async => NavBarPage(initialPage: 'UserProfile'),
   'RegisterYourDecision': (data) async => RegisterYourDecisionWidget(),
   'Donate': (data) async => DonateWidget(),
-  'Login': (data) async => LoginWidget(),
   'Register': (data) async => RegisterWidget(),
+  'Login': (data) async => LoginWidget(),
   'ResetPassword': (data) async => ResetPasswordWidget(),
   'AfterResetPassword': (data) async => AfterResetPasswordWidget(),
   'Withdraw': (data) async => WithdrawWidget(),
@@ -106,6 +106,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'BecomingALivingDonor': (data) async => BecomingALivingDonorWidget(),
   'WhoCanDonate': (data) async => WhoCanDonateWidget(),
   'Consent': (data) async => ConsentWidget(),
+  'AdminPage': (data) async => AdminPageWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

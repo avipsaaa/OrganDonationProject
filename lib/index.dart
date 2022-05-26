@@ -4,8 +4,8 @@ export 'user_profile/user_profile_widget.dart' show UserProfileWidget;
 export 'register_your_decision/register_your_decision_widget.dart'
     show RegisterYourDecisionWidget;
 export 'donate/donate_widget.dart' show DonateWidget;
-export 'login/login_widget.dart' show LoginWidget;
 export 'register/register_widget.dart' show RegisterWidget;
+export 'login/login_widget.dart' show LoginWidget;
 export 'reset_password/reset_password_widget.dart' show ResetPasswordWidget;
 export 'after_reset_password/after_reset_password_widget.dart'
     show AfterResetPasswordWidget;
@@ -32,3 +32,4 @@ export 'becoming_a_living_donor/becoming_a_living_donor_widget.dart'
     show BecomingALivingDonorWidget;
 export 'who_can_donate/who_can_donate_widget.dart' show WhoCanDonateWidget;
 export 'consent/consent_widget.dart' show ConsentWidget;
+export 'admin_page/admin_page_widget.dart' show AdminPageWidget;

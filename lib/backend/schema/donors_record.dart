@@ -56,11 +56,41 @@ abstract class DonorsRecord
   String get gender;
 
   @nullable
-  @BuiltValueField(wireName: 'd_id')
-  DocumentReference get dId;
+  @BuiltValueField(wireName: 'citizenship_number')
+  String get citizenshipNumber;
 
   @nullable
-  bool get isRegistered;
+  @BuiltValueField(wireName: 'father_name')
+  String get fatherName;
+
+  @nullable
+  @BuiltValueField(wireName: 'mother_name')
+  String get motherName;
+
+  @nullable
+  @BuiltValueField(wireName: 'grandfather_name')
+  String get grandfatherName;
+
+  @nullable
+  @BuiltValueField(wireName: 'medical_history')
+  String get medicalHistory;
+
+  @nullable
+  String get allergy;
+
+  @nullable
+  String get medication;
+
+  @nullable
+  @BuiltValueField(wireName: 'medication_taken')
+  String get medicationTaken;
+
+  @nullable
+  String get choices;
+
+  @nullable
+  @BuiltValueField(wireName: 'blood_group')
+  String get bloodGroup;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -79,7 +109,16 @@ abstract class DonorsRecord
     ..donorEmail = ''
     ..donorPhoneNumber = ''
     ..gender = ''
-    ..isRegistered = false;
+    ..citizenshipNumber = ''
+    ..fatherName = ''
+    ..motherName = ''
+    ..grandfatherName = ''
+    ..medicalHistory = ''
+    ..allergy = ''
+    ..medication = ''
+    ..medicationTaken = ''
+    ..choices = ''
+    ..bloodGroup = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('donors');
@@ -115,8 +154,16 @@ Map<String, dynamic> createDonorsRecordData({
   String donorEmail,
   String donorPhoneNumber,
   String gender,
-  DocumentReference dId,
-  bool isRegistered,
+  String citizenshipNumber,
+  String fatherName,
+  String motherName,
+  String grandfatherName,
+  String medicalHistory,
+  String allergy,
+  String medication,
+  String medicationTaken,
+  String choices,
+  String bloodGroup,
 }) =>
     serializers.toFirestore(
         DonorsRecord.serializer,
@@ -133,5 +180,13 @@ Map<String, dynamic> createDonorsRecordData({
           ..donorEmail = donorEmail
           ..donorPhoneNumber = donorPhoneNumber
           ..gender = gender
-          ..dId = dId
-          ..isRegistered = isRegistered));
+          ..citizenshipNumber = citizenshipNumber
+          ..fatherName = fatherName
+          ..motherName = motherName
+          ..grandfatherName = grandfatherName
+          ..medicalHistory = medicalHistory
+          ..allergy = allergy
+          ..medication = medication
+          ..medicationTaken = medicationTaken
+          ..choices = choices
+          ..bloodGroup = bloodGroup));

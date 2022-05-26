@@ -1,4 +1,5 @@
 import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -106,55 +107,95 @@ class _WithdrawWidgetState extends State<WithdrawWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              var confirmDialogResponse =
-                                  await showDialog<bool>(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text(
-                                                'Would you like to withdraw your decision?'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: Text('Cancel'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: Text('Confirm'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ) ??
-                                      false;
-                              await currentUserReference.delete();
-                            },
-                            text: 'Withdraw',
-                            icon: Icon(
-                              Icons.logout,
-                              size: 20,
+                          child: StreamBuilder<List<DonorsRecord>>(
+                            stream: queryDonorsRecord(
+                              queryBuilder: (donorsRecord) =>
+                                  donorsRecord.where('donor_email',
+                                      isEqualTo: currentUserEmail),
+                              singleRecord: true,
                             ),
-                            options: FFButtonOptions(
-                              width: 140,
-                              height: 50,
-                              color: Color(0xFFA9003E),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Nunito',
-                                    color: Colors.white,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50,
+                                    height: 50,
+                                    child: SpinKitFadingCube(
+                                      color: Color(0xFF880707),
+                                      size: 50,
+                                    ),
                                   ),
-                              elevation: 4,
-                              borderSide: BorderSide(
-                                color: Color(0xFFA9003E),
-                                width: 1,
-                              ),
-                              borderRadius: 12,
-                            ),
+                                );
+                              }
+                              List<DonorsRecord>
+                                  buttonWithdrawDonorsRecordList =
+                                  snapshot.data;
+                              // Return an empty Container when the document does not exist.
+                              if (snapshot.data.isEmpty) {
+                                return Container();
+                              }
+                              final buttonWithdrawDonorsRecord =
+                                  buttonWithdrawDonorsRecordList.isNotEmpty
+                                      ? buttonWithdrawDonorsRecordList.first
+                                      : null;
+                              return FFButtonWidget(
+                                onPressed: () async {
+                                  var confirmDialogResponse =
+                                      await showDialog<bool>(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text(
+                                                    'Would you like to withdraw your decision?'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            false),
+                                                    child: Text('Cancel'),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            true),
+                                                    child: Text('Confirm'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ) ??
+                                          false;
+                                  await buttonWithdrawDonorsRecord.reference
+                                      .delete();
+                                  context.goNamed('RegisterYourDecision');
+                                },
+                                text: 'Withdraw',
+                                icon: Icon(
+                                  Icons.logout,
+                                  size: 20,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 140,
+                                  height: 50,
+                                  color: Color(0xFFA9003E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: Colors.white,
+                                      ),
+                                  elevation: 4,
+                                  borderSide: BorderSide(
+                                    color: Color(0xFFA9003E),
+                                    width: 1,
+                                  ),
+                                  borderRadius: 12,
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ],

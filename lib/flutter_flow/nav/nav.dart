@@ -102,14 +102,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => DonateWidget(),
             ),
             FFRoute(
-              name: 'Login',
-              path: 'login',
-              builder: (context, params) => LoginWidget(),
-            ),
-            FFRoute(
               name: 'Register',
               path: 'register',
               builder: (context, params) => RegisterWidget(),
+            ),
+            FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => LoginWidget(),
             ),
             FFRoute(
               name: 'ResetPassword',
@@ -206,6 +206,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'Consent',
               path: 'consent',
               builder: (context, params) => ConsentWidget(),
+            ),
+            FFRoute(
+              name: 'AdminPage',
+              path: 'adminPage',
+              builder: (context, params) => AdminPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
