@@ -65,6 +65,7 @@ class _ConsentWidgetState extends State<ConsentWidget> {
               children: [
                 ListView(
                   padding: EdgeInsets.zero,
+                  primary: false,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
