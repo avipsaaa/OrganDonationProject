@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,19 +16,6 @@ class AppHomeWidget extends StatefulWidget {
 
 class _AppHomeWidgetState extends State<AppHomeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    // On page load action.
-    SchedulerBinding.instance?.addPostFrameCallback((_) async {
-      if ((currentUserEmail) == 'admin@admin.com') {
-        context.goNamed('AdminPage');
-      } else {
-        return;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -313,39 +299,6 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               context.pushNamed('BecomingALivingDonor');
                             },
                             text: 'Becoming a living donor',
-                            options: FFButtonOptions(
-                              width: 130,
-                              height: 70,
-                              color: Colors.white,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Nunito',
-                                    color: Color(0xFFB80000),
-                                  ),
-                              elevation: 4,
-                              borderSide: BorderSide(
-                                color: Color(0xFFB80000),
-                                width: 1,
-                              ),
-                              borderRadius: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('SupportUs');
-                            },
-                            text: 'Support us',
                             options: FFButtonOptions(
                               width: 130,
                               height: 70,

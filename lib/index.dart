@@ -18,7 +18,6 @@ export 'heart_donation/heart_donation_widget.dart' show HeartDonationWidget;
 export 'talk_to_your_loved_ones/talk_to_your_loved_ones_widget.dart'
     show TalkToYourLovedOnesWidget;
 export 'nepal_laws/nepal_laws_widget.dart' show NepalLawsWidget;
-export 'support_us/support_us_widget.dart' show SupportUsWidget;
 export 'know_about_us/know_about_us_widget.dart' show KnowAboutUsWidget;
 export 'lungs_donation/lungs_donation_widget.dart' show LungsDonationWidget;
 export 'liver_donation/liver_donation_widget.dart' show LiverDonationWidget;

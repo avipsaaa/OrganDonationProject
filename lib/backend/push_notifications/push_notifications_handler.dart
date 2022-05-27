@@ -95,7 +95,6 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'HeartDonation': (data) async => HeartDonationWidget(),
   'TalkToYourLovedOnes': (data) async => TalkToYourLovedOnesWidget(),
   'NepalLaws': (data) async => NepalLawsWidget(),
-  'SupportUs': (data) async => SupportUsWidget(),
   'KnowAboutUs': (data) async => KnowAboutUsWidget(),
   'LungsDonation': (data) async => LungsDonationWidget(),
   'LiverDonation': (data) async => LiverDonationWidget(),

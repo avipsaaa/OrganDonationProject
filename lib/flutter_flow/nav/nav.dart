@@ -153,11 +153,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NepalLawsWidget(),
             ),
             FFRoute(
-              name: 'SupportUs',
-              path: 'supportUs',
-              builder: (context, params) => SupportUsWidget(),
-            ),
-            FFRoute(
               name: 'KnowAboutUs',
               path: 'knowAboutUs',
               builder: (context, params) => KnowAboutUsWidget(),
