@@ -151,7 +151,7 @@ class _NavBarPageState extends State<NavBarPage> {
               FontAwesomeIcons.solidUser,
               size: 24,
             ),
-            label: 'Profile',
+            label: 'Home',
             tooltip: '',
           )
         ],

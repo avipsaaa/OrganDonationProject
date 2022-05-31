@@ -1,6 +1,5 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_checkbox_group.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -40,7 +39,7 @@ class _DonateWidgetState extends State<DonateWidget> {
   TextEditingController textMedicalHistoryController;
   String radioButtonMedicationValue;
   TextEditingController textMedicationsTakenController;
-  List<String> choicesGroupValues;
+  String radioButtonChoiceValue;
   bool confirmationCheckBoxValue;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -1604,66 +1603,60 @@ class _DonateWidgetState extends State<DonateWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 0),
+                                      0, 15, 0, 0),
                                   child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'I want to donate my',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Nunito',
-                                                        color:
-                                                            Color(0xFF161819),
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                ),
-                                                FlutterFlowCheckboxGroup(
-                                                  initiallySelected:
-                                                      choicesGroupValues != null
-                                                          ? choicesGroupValues
-                                                          : [],
-                                                  options: [
-                                                    'Heart',
-                                                    'Lungs',
-                                                    'Liver',
-                                                    'Kidney',
-                                                    'Pancreas',
-                                                    'Small Bowel',
-                                                    'Cornea',
-                                                    'Tissues'
-                                                  ].toList(),
-                                                  onChanged: (val) => setState(
-                                                      () => choicesGroupValues =
-                                                          val),
-                                                  activeColor:
-                                                      Color(0xFF00BCD4),
-                                                  checkColor: Colors.white,
-                                                  checkboxBorderColor:
-                                                      Colors.black,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyText1,
-                                                ),
-                                              ],
+                                      Text(
+                                        'I want to become:',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Nunito',
+                                              color: Color(0xFF161819),
+                                              fontWeight: FontWeight.w600,
                                             ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 4, 0, 0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 30,
+                                          decoration: BoxDecoration(),
+                                          child: FlutterFlowRadioButton(
+                                            options: [
+                                              'An afterlife donor',
+                                              'A living Donor'
+                                            ].toList(),
+                                            onChanged: (value) {
+                                              setState(() =>
+                                                  radioButtonChoiceValue =
+                                                      value);
+                                            },
+                                            optionHeight: 25,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Nunito',
+                                                      color: Colors.black,
+                                                    ),
+                                            buttonPosition:
+                                                RadioButtonPosition.left,
+                                            direction: Axis.horizontal,
+                                            radioButtonColor: Color(0xFF00BCD4),
+                                            inactiveRadioButtonColor:
+                                                Color(0x8A000000),
+                                            toggleable: false,
+                                            horizontalAlignment:
+                                                WrapAlignment.spaceEvenly,
+                                            verticalAlignment:
+                                                WrapCrossAlignment.start,
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -1671,224 +1664,232 @@ class _DonateWidgetState extends State<DonateWidget> {
                               ],
                             ),
                           ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Text(
-                                'Confirmation',
-                                style: FlutterFlowTheme.of(context)
-                                    .title3
-                                    .override(
-                                      fontFamily: 'Nunito',
-                                      color: Colors.black,
-                                    ),
-                              ),
-                              Divider(
-                                height: 2,
-                                thickness: 2,
-                                color: Color(0xFFC5C5C5),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 25),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Theme(
-                                      data: ThemeData(
-                                        unselectedWidgetColor:
-                                            Color(0xFF95A1AC),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  'Confirmation',
+                                  style: FlutterFlowTheme.of(context)
+                                      .title3
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: Colors.black,
                                       ),
-                                      child: CheckboxListTile(
-                                        value: confirmationCheckBoxValue ??=
-                                            false,
-                                        onChanged: (newValue) => setState(() =>
-                                            confirmationCheckBoxValue =
-                                                newValue),
-                                        title: Text(
-                                          'I have read the terms and conditions and give consent for the use of my informations if required.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Nunito',
-                                                color: Color(0xFF161819),
-                                              ),
+                                ),
+                                Divider(
+                                  height: 2,
+                                  thickness: 2,
+                                  color: Color(0xFFC5C5C5),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 15, 0, 25),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                          unselectedWidgetColor:
+                                              Color(0xFF95A1AC),
                                         ),
-                                        tileColor: Color(0xFFF5F5F5),
-                                        activeColor: Color(0xFF00BCD4),
-                                        dense: true,
-                                        controlAffinity:
-                                            ListTileControlAffinity.leading,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 20, 0, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                if (formKey.currentState ==
-                                                        null ||
-                                                    !formKey.currentState
-                                                        .validate()) {
-                                                  return;
-                                                }
-                                                if (radioButtonGenderValue ==
-                                                    null) {
-                                                  return;
-                                                }
-                                                if (radioButtonBloodGroupValue ==
-                                                    null) {
-                                                  return;
-                                                }
-                                                if (radioButtonAllergyValue ==
-                                                    null) {
-                                                  return;
-                                                }
-                                                if (radioButtonMedicationValue ==
-                                                    null) {
-                                                  return;
-                                                }
-
-                                                if (datePicked == null) {
-                                                  return;
-                                                }
-
-                                                var confirmDialogResponse =
-                                                    await showDialog<bool>(
-                                                          context: context,
-                                                          builder:
-                                                              (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: Text(
-                                                                  'Decision to Donate'),
-                                                              content: Text(
-                                                                  'Pressing confirm will register your decision to donate.'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(
-                                                                      'Cancel'),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
-                                                            );
-                                                          },
-                                                        ) ??
-                                                        false;
-
-                                                final donorsCreateData =
-                                                    createDonorsRecordData(
-                                                  firstName:
-                                                      textFirstNameController
-                                                          .text,
-                                                  middleName:
-                                                      textMiddleNameController
-                                                          .text,
-                                                  lastName:
-                                                      textLastNameController
-                                                          .text,
-                                                  dateOfBirth: dateTimeFormat(
-                                                      'yMd', datePicked),
-                                                  addressLine1:
-                                                      textAddressLine1Controller
-                                                          .text,
-                                                  addressLine2:
-                                                      textAddressLine2Controller
-                                                          .text,
-                                                  city: textCityController.text,
-                                                  province:
-                                                      textProvinceController
-                                                          .text,
-                                                  zipCode: textZipCodeController
-                                                      .text,
-                                                  donorEmail: currentUserEmail,
-                                                  donorPhoneNumber:
-                                                      currentPhoneNumber,
-                                                  gender:
-                                                      radioButtonGenderValue,
-                                                  citizenshipNumber:
-                                                      textCitizenshipController
-                                                          .text,
-                                                  fatherName:
-                                                      textFatherController.text,
-                                                  motherName:
-                                                      textMotherController.text,
-                                                  grandfatherName:
-                                                      textGrandfatherController
-                                                          .text,
-                                                  bloodGroup:
-                                                      radioButtonBloodGroupValue,
-                                                  medicalHistory:
-                                                      textMedicalHistoryController
-                                                          .text,
-                                                  allergy:
-                                                      radioButtonAllergyValue,
-                                                  medication:
-                                                      radioButtonMedicationValue,
-                                                  medicationTaken:
-                                                      textMedicationsTakenController
-                                                          .text,
-                                                  choices: choicesGroupValues
-                                                      .length
-                                                      .toString(),
-                                                );
-                                                await DonorsRecord.collection
-                                                    .doc()
-                                                    .set(donorsCreateData);
-                                                context.goNamed(
-                                                    'RegisterYourDecision');
-                                              },
-                                              text: 'Donate',
-                                              icon: Icon(
-                                                Icons
-                                                    .check_circle_outline_outlined,
-                                                color: Colors.white,
-                                                size: 20,
-                                              ),
-                                              options: FFButtonOptions(
-                                                width: 140,
-                                                height: 50,
-                                                color: Color(0xFF166F32),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2
-                                                        .override(
-                                                          fontFamily: 'Nunito',
-                                                          color: Colors.white,
-                                                        ),
-                                                elevation: 4,
-                                                borderSide: BorderSide(
-                                                  color: Color(0xFF166F32),
-                                                  width: 1,
+                                        child: CheckboxListTile(
+                                          value: confirmationCheckBoxValue ??=
+                                              false,
+                                          onChanged: (newValue) => setState(
+                                              () => confirmationCheckBoxValue =
+                                                  newValue),
+                                          title: Text(
+                                            'I have read the terms and conditions and give consent for the use of my informations if required.',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Nunito',
+                                                  color: Color(0xFF161819),
                                                 ),
-                                                borderRadius: 12,
+                                          ),
+                                          tileColor: Color(0xFFF5F5F5),
+                                          activeColor: Color(0xFF00BCD4),
+                                          dense: true,
+                                          controlAffinity:
+                                              ListTileControlAffinity.leading,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (formKey.currentState ==
+                                                          null ||
+                                                      !formKey.currentState
+                                                          .validate()) {
+                                                    return;
+                                                  }
+                                                  if (radioButtonGenderValue ==
+                                                      null) {
+                                                    return;
+                                                  }
+                                                  if (radioButtonBloodGroupValue ==
+                                                      null) {
+                                                    return;
+                                                  }
+                                                  if (radioButtonAllergyValue ==
+                                                      null) {
+                                                    return;
+                                                  }
+                                                  if (radioButtonMedicationValue ==
+                                                      null) {
+                                                    return;
+                                                  }
+
+                                                  if (datePicked == null) {
+                                                    return;
+                                                  }
+
+                                                  var confirmDialogResponse =
+                                                      await showDialog<bool>(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: Text(
+                                                                    'Decision to Donate'),
+                                                                content: Text(
+                                                                    'Pressing confirm will register your decision to donate.'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                    child: Text(
+                                                                        'Cancel'),
+                                                                  ),
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                    child: Text(
+                                                                        'Confirm'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ) ??
+                                                          false;
+
+                                                  final donorsCreateData =
+                                                      createDonorsRecordData(
+                                                    firstName:
+                                                        textFirstNameController
+                                                            .text,
+                                                    middleName:
+                                                        textMiddleNameController
+                                                            .text,
+                                                    lastName:
+                                                        textLastNameController
+                                                            .text,
+                                                    dateOfBirth: dateTimeFormat(
+                                                        'yMd', datePicked),
+                                                    addressLine1:
+                                                        textAddressLine1Controller
+                                                            .text,
+                                                    addressLine2:
+                                                        textAddressLine2Controller
+                                                            .text,
+                                                    city:
+                                                        textCityController.text,
+                                                    province:
+                                                        textProvinceController
+                                                            .text,
+                                                    zipCode:
+                                                        textZipCodeController
+                                                            .text,
+                                                    donorEmail:
+                                                        currentUserEmail,
+                                                    donorPhoneNumber:
+                                                        currentPhoneNumber,
+                                                    gender:
+                                                        radioButtonGenderValue,
+                                                    citizenshipNumber:
+                                                        textCitizenshipController
+                                                            .text,
+                                                    fatherName:
+                                                        textFatherController
+                                                            .text,
+                                                    motherName:
+                                                        textMotherController
+                                                            .text,
+                                                    grandfatherName:
+                                                        textGrandfatherController
+                                                            .text,
+                                                    bloodGroup:
+                                                        radioButtonBloodGroupValue,
+                                                    medicalHistory:
+                                                        textMedicalHistoryController
+                                                            .text,
+                                                    allergy:
+                                                        radioButtonAllergyValue,
+                                                    medication:
+                                                        radioButtonMedicationValue,
+                                                    medicationTaken:
+                                                        textMedicationsTakenController
+                                                            .text,
+                                                    choices:
+                                                        radioButtonChoiceValue,
+                                                  );
+                                                  await DonorsRecord.collection
+                                                      .doc()
+                                                      .set(donorsCreateData);
+                                                  context.goNamed(
+                                                      'RegisterYourDecision');
+                                                },
+                                                text: 'Donate',
+                                                icon: Icon(
+                                                  Icons
+                                                      .check_circle_outline_outlined,
+                                                  color: Colors.white,
+                                                  size: 20,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  width: 140,
+                                                  height: 50,
+                                                  color: Color(0xFF166F32),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .subtitle2
+                                                      .override(
+                                                        fontFamily: 'Nunito',
+                                                        color: Colors.white,
+                                                      ),
+                                                  elevation: 4,
+                                                  borderSide: BorderSide(
+                                                    color: Color(0xFF166F32),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius: 12,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),

@@ -117,7 +117,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         controller: registrationNameController,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelText: 'Full Name',
+                                          labelText: 'Name',
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -128,6 +128,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                          hintText: 'Enter your full name',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -197,6 +198,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                          hintText: 'Enter your email addess',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -266,6 +268,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                          hintText: 'Enter your phone number',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -336,6 +339,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                          hintText: 'Enter a password',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -372,6 +376,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               () => registrationPasswordVisibility =
                                                   !registrationPasswordVisibility,
                                             ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
                                             child: Icon(
                                               registrationPasswordVisibility
                                                   ? Icons.visibility_outlined
@@ -428,6 +434,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               registrationNameController.text,
                                           phoneNumber:
                                               registrationNumberController.text,
+                                          photoUrl:
+                                              'https://www.freeiconspng.com/img/893',
+                                          role: 'user',
                                         );
                                         await UsersRecord.collection
                                             .doc(user.uid)

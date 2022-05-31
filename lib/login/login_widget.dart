@@ -132,7 +132,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
-                                          hintText: 'Enter your email here...',
+                                          hintText: 'Enter your email here',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -201,8 +201,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
-                                          hintText:
-                                              'Enter your password here...',
+                                          hintText: 'Enter your password here',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1
@@ -239,6 +238,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               () => loginPasswordVisibility =
                                                   !loginPasswordVisibility,
                                             ),
+                                            focusNode:
+                                                FocusNode(skipTraversal: true),
                                             child: Icon(
                                               loginPasswordVisibility
                                                   ? Icons.visibility_outlined

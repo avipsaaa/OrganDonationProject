@@ -92,8 +92,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                       },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/userAvatar.jpg',
+                        child: Image.network(
+                          valueOrDefault<String>(
+                            uploadedFileUrl,
+                            'https://www.freeiconspng.com/img/893',
+                          ),
                           width: 100,
                           height: 100,
                           fit: BoxFit.cover,
