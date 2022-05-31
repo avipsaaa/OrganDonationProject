@@ -115,7 +115,7 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                     ),
                                   );
                                 }
-                                List<UsersRecord> columnUsersRecordList =
+                                List<UsersRecord> columnUsersUsersRecordList =
                                     snapshot.data
                                         .where((u) => u.uid != currentUserUid)
                                         .toList();
@@ -125,55 +125,112 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: List.generate(
-                                        columnUsersRecordList.length,
-                                        (columnIndex) {
-                                      final columnUsersRecord =
-                                          columnUsersRecordList[columnIndex];
+                                        columnUsersUsersRecordList.length,
+                                        (columnUsersIndex) {
+                                      final columnUsersUsersRecord =
+                                          columnUsersUsersRecordList[
+                                              columnUsersIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 8, 16, 44),
-                                        child: Container(
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            20, 10, 20, 10),
+                                        child: Material(
+                                          color: Colors.transparent,
+                                          elevation: 2,
+                                          shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(10),
                                           ),
-                                          child: Slidable(
-                                            actionPane:
-                                                const SlidableScrollActionPane(),
-                                            secondaryActions: [
-                                              IconSlideAction(
-                                                caption: 'Share',
-                                                color: Colors.blue,
-                                                icon: Icons.share,
-                                                onTap: () {
-                                                  print(
-                                                      'SlidableActionWidget pressed ...');
-                                                },
+                                          child: Container(
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFF7F7F7),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Slidable(
+                                              actionPane:
+                                                  const SlidableScrollActionPane(),
+                                              secondaryActions: [
+                                                StreamBuilder<
+                                                    List<UsersRecord>>(
+                                                  stream: queryUsersRecord(
+                                                    queryBuilder: (usersRecord) =>
+                                                        usersRecord.where(
+                                                            'email',
+                                                            isEqualTo:
+                                                                columnUsersUsersRecord
+                                                                    .email),
+                                                    singleRecord: true,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                              SpinKitFadingCube(
+                                                            color: Color(
+                                                                0xFF880707),
+                                                            size: 50,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<UsersRecord>
+                                                        slidableActionWidgetUsersRecordList =
+                                                        snapshot.data
+                                                            .where((u) =>
+                                                                u.uid !=
+                                                                currentUserUid)
+                                                            .toList();
+                                                    // Return an empty Container when the document does not exist.
+                                                    if (snapshot.data.isEmpty) {
+                                                      return Container();
+                                                    }
+                                                    final slidableActionWidgetUsersRecord =
+                                                        slidableActionWidgetUsersRecordList
+                                                                .isNotEmpty
+                                                            ? slidableActionWidgetUsersRecordList
+                                                                .first
+                                                            : null;
+                                                    return IconSlideAction(
+                                                      caption: 'Delete',
+                                                      color: Color(0xFFB80000),
+                                                      icon:
+                                                          Icons.delete_forever,
+                                                      onTap: () async {
+                                                        await columnUsersUsersRecord
+                                                            .reference
+                                                            .delete();
+                                                      },
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                              child: ListTile(
+                                                title: Text(
+                                                  columnUsersUsersRecord
+                                                      .displayName,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .title3,
+                                                ),
+                                                subtitle: Text(
+                                                  columnUsersUsersRecord.email,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle2,
+                                                ),
+                                                trailing: Icon(
+                                                  Icons.arrow_forward_ios,
+                                                  color: Color(0xFF303030),
+                                                  size: 20,
+                                                ),
+                                                tileColor: Color(0xFFF5F5F5),
+                                                dense: false,
                                               ),
-                                            ],
-                                            child: ListTile(
-                                              title: Text(
-                                                columnUsersRecord.displayName,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .title3,
-                                              ),
-                                              subtitle: Text(
-                                                columnUsersRecord.email,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2,
-                                              ),
-                                              trailing: Icon(
-                                                Icons.delete_forever,
-                                                color: Color(0xFF303030),
-                                                size: 20,
-                                              ),
-                                              tileColor: Color(0xFFF5F5F5),
-                                              dense: false,
                                             ),
                                           ),
                                         ),
@@ -183,25 +240,137 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                 );
                               },
                             ),
-                            SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 44),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        borderRadius: BorderRadius.circular(12),
+                            StreamBuilder<List<DonorsRecord>>(
+                              stream: queryDonorsRecord(),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50,
+                                      height: 50,
+                                      child: SpinKitFadingCube(
+                                        color: Color(0xFF880707),
+                                        size: 50,
                                       ),
                                     ),
+                                  );
+                                }
+                                List<DonorsRecord>
+                                    columnDonorsDonorsRecordList =
+                                    snapshot.data;
+                                return SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: List.generate(
+                                        columnDonorsDonorsRecordList.length,
+                                        (columnDonorsIndex) {
+                                      final columnDonorsDonorsRecord =
+                                          columnDonorsDonorsRecordList[
+                                              columnDonorsIndex];
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 10, 20, 10),
+                                        child: Material(
+                                          color: Colors.transparent,
+                                          elevation: 2,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Container(
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFF7F7F7),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Slidable(
+                                              actionPane:
+                                                  const SlidableScrollActionPane(),
+                                              secondaryActions: [
+                                                StreamBuilder<
+                                                    List<DonorsRecord>>(
+                                                  stream: queryDonorsRecord(
+                                                    singleRecord: true,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                              SpinKitFadingCube(
+                                                            color: Color(
+                                                                0xFF880707),
+                                                            size: 50,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<DonorsRecord>
+                                                        slidableActionWidgetDonorsRecordList =
+                                                        snapshot.data;
+                                                    // Return an empty Container when the document does not exist.
+                                                    if (snapshot.data.isEmpty) {
+                                                      return Container();
+                                                    }
+                                                    final slidableActionWidgetDonorsRecord =
+                                                        slidableActionWidgetDonorsRecordList
+                                                                .isNotEmpty
+                                                            ? slidableActionWidgetDonorsRecordList
+                                                                .first
+                                                            : null;
+                                                    return IconSlideAction(
+                                                      caption: 'Verify',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .customColor1,
+                                                      icon: Icons.verified_user,
+                                                      onTap: () async {
+                                                        await columnDonorsDonorsRecord
+                                                            .reference
+                                                            .delete();
+                                                      },
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                              child: ListTile(
+                                                title: Text(
+                                                  columnDonorsDonorsRecord
+                                                      .firstName,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .title3,
+                                                ),
+                                                subtitle: Text(
+                                                  'Organ Donor Form',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle2,
+                                                ),
+                                                trailing: Icon(
+                                                  Icons.arrow_forward_ios,
+                                                  color: Color(0xFF303030),
+                                                  size: 20,
+                                                ),
+                                                tileColor: Color(0xFFF5F5F5),
+                                                dense: false,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }),
                                   ),
-                                ],
-                              ),
+                                );
+                              },
                             ),
                           ],
                         ),
