@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../backend/push_notifications/push_notifications_util.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -292,6 +293,68 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                   const SlidableScrollActionPane(),
                                               secondaryActions: [
                                                 StreamBuilder<
+                                                    List<UsersRecord>>(
+                                                  stream: queryUsersRecord(
+                                                    singleRecord: true,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                              SpinKitFadingCube(
+                                                            color: Color(
+                                                                0xFF880707),
+                                                            size: 50,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<UsersRecord>
+                                                        slidableActionWidgetUsersRecordList =
+                                                        snapshot.data;
+                                                    // Return an empty Container when the document does not exist.
+                                                    if (snapshot.data.isEmpty) {
+                                                      return Container();
+                                                    }
+                                                    final slidableActionWidgetUsersRecord =
+                                                        slidableActionWidgetUsersRecordList
+                                                                .isNotEmpty
+                                                            ? slidableActionWidgetUsersRecordList
+                                                                .first
+                                                            : null;
+                                                    return IconSlideAction(
+                                                      caption: 'Verify',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .customColor1,
+                                                      icon: Icons
+                                                          .verified_user_sharp,
+                                                      onTap: () async {
+                                                        triggerPushNotification(
+                                                          notificationTitle:
+                                                              'Donor Form Verification Status',
+                                                          notificationText:
+                                                              'Your donor form details have been verified.',
+                                                          notificationSound:
+                                                              'default',
+                                                          userRefs: [
+                                                            slidableActionWidgetUsersRecord
+                                                                .reference
+                                                          ],
+                                                          initialPageName:
+                                                              'AppHome',
+                                                          parameterData: {},
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                ),
+                                                StreamBuilder<
                                                     List<DonorsRecord>>(
                                                   stream: queryDonorsRecord(
                                                     singleRecord: true,
@@ -326,12 +389,10 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                                 .first
                                                             : null;
                                                     return IconSlideAction(
-                                                      caption: 'Verify',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .customColor1,
-                                                      icon: Icons.verified_user,
+                                                      caption: 'Discard',
+                                                      color: Color(0xFFB80000),
+                                                      icon: Icons
+                                                          .remove_moderator,
                                                       onTap: () async {
                                                         await columnDonorsDonorsRecord
                                                             .reference
