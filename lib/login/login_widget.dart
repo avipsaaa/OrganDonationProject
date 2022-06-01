@@ -420,7 +420,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       },
                                       text: 'Register',
                                       options: FFButtonOptions(
-                                        width: 81,
+                                        width: 90,
                                         height: 40,
                                         color: Colors.white,
                                         textStyle: FlutterFlowTheme.of(context)

@@ -440,6 +440,23 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             .update(usersCreateData);
 
                                         await sendEmailVerification();
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Please check your mail for an email verification link to verify your account!',
+                                              style: GoogleFonts.getFont(
+                                                'Lexend Deca',
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor: Colors.black,
+                                          ),
+                                        );
                                         context.goNamedAuth('AppHome', mounted);
                                       },
                                       text: 'Register',
@@ -510,7 +527,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       },
                                       text: 'Login',
                                       options: FFButtonOptions(
-                                        width: 60,
+                                        width: 70,
                                         height: 40,
                                         color: Colors.white,
                                         textStyle: FlutterFlowTheme.of(context)
