@@ -153,64 +153,6 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              if (currentUserEmailVerified) {
-                                context.pushNamed('RegisterYourDecision');
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'You are not logged in!',
-                                      style: GoogleFonts.getFont(
-                                        'Lexend Deca',
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                    duration: Duration(milliseconds: 4000),
-                                    backgroundColor: Colors.black,
-                                    action: SnackBarAction(
-                                      label: 'Login',
-                                      textColor: Colors.white,
-                                      onPressed: () async {
-                                        context.pushNamed('Login');
-                                      },
-                                    ),
-                                  ),
-                                );
-                              }
-                            },
-                            text: 'Register your decision',
-                            options: FFButtonOptions(
-                              width: 130,
-                              height: 70,
-                              color: Colors.white,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Nunito',
-                                    color: Color(0xFFB80000),
-                                  ),
-                              elevation: 4,
-                              borderSide: BorderSide(
-                                color: Color(0xFFB80000),
-                                width: 1,
-                              ),
-                              borderRadius: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: FFButtonWidget(
-                            onPressed: () async {
                               context.pushNamed('HelpingYouDecide');
                             },
                             text: 'Helping you decide',
@@ -313,6 +255,64 @@ class _AppHomeWidgetState extends State<AppHomeWidget> {
                               context.pushNamed('BecomingALivingDonor');
                             },
                             text: 'Becoming a living donor',
+                            options: FFButtonOptions(
+                              width: 130,
+                              height: 70,
+                              color: Colors.white,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Nunito',
+                                    color: Color(0xFFB80000),
+                                  ),
+                              elevation: 4,
+                              borderSide: BorderSide(
+                                color: Color(0xFFB80000),
+                                width: 1,
+                              ),
+                              borderRadius: 12,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              if (currentUserEmailVerified) {
+                                context.pushNamed('RegisterYourDecision');
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Please login and verify your email to continue!',
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor: Colors.black,
+                                    action: SnackBarAction(
+                                      label: 'Login',
+                                      textColor: Colors.white,
+                                      onPressed: () async {
+                                        context.pushNamed('Login');
+                                      },
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                            text: 'Register your decision',
                             options: FFButtonOptions(
                               width: 130,
                               height: 70,

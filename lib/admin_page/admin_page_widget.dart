@@ -202,9 +202,65 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                       icon:
                                                           Icons.delete_forever,
                                                       onTap: () async {
+                                                        var confirmDialogResponse =
+                                                            await showDialog<
+                                                                    bool>(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (alertDialogContext) {
+                                                                    return AlertDialog(
+                                                                      title: Text(
+                                                                          'Delete User'),
+                                                                      content: Text(
+                                                                          'You are about to delete this user\'s data permanently. Do you want to continue?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancel'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Continue'),
+                                                                        ),
+                                                                      ],
+                                                                    );
+                                                                  },
+                                                                ) ??
+                                                                false;
                                                         await columnUsersUsersRecord
                                                             .reference
                                                             .delete();
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          SnackBar(
+                                                            content: Text(
+                                                              'User data has been deleted.',
+                                                              style: GoogleFonts
+                                                                  .getFont(
+                                                                'Lexend Deca',
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    4000),
+                                                            backgroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                        );
                                                       },
                                                     );
                                                   },
@@ -328,13 +384,64 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                             : null;
                                                     return IconSlideAction(
                                                       caption: 'Verify',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .customColor1,
+                                                      color: Color(0xFF31BD3F),
                                                       icon: Icons
                                                           .verified_user_sharp,
                                                       onTap: () async {
+                                                        var confirmDialogResponse =
+                                                            await showDialog<
+                                                                    bool>(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (alertDialogContext) {
+                                                                    return AlertDialog(
+                                                                      title: Text(
+                                                                          'Verify Donor Status?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancel'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Confirm'),
+                                                                        ),
+                                                                      ],
+                                                                    );
+                                                                  },
+                                                                ) ??
+                                                                false;
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          SnackBar(
+                                                            content: Text(
+                                                              'Donor details has been successfully verified',
+                                                              style: GoogleFonts
+                                                                  .getFont(
+                                                                'Lexend Deca',
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    4000),
+                                                            backgroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                        );
                                                         triggerPushNotification(
                                                           notificationTitle:
                                                               'Donor Form Verification Status',
@@ -394,9 +501,63 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                       icon: Icons
                                                           .remove_moderator,
                                                       onTap: () async {
+                                                        var confirmDialogResponse =
+                                                            await showDialog<
+                                                                    bool>(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (alertDialogContext) {
+                                                                    return AlertDialog(
+                                                                      title: Text(
+                                                                          'Discard Donor Details?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancel'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Confirm'),
+                                                                        ),
+                                                                      ],
+                                                                    );
+                                                                  },
+                                                                ) ??
+                                                                false;
                                                         await columnDonorsDonorsRecord
                                                             .reference
                                                             .delete();
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          SnackBar(
+                                                            content: Text(
+                                                              'Donor details has been discarded.',
+                                                              style: GoogleFonts
+                                                                  .getFont(
+                                                                'Lexend Deca',
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    4000),
+                                                            backgroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                        );
                                                       },
                                                     );
                                                   },
@@ -411,7 +572,8 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                       .title3,
                                                 ),
                                                 subtitle: Text(
-                                                  'Organ Donor Form',
+                                                  columnDonorsDonorsRecord
+                                                      .choices,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .subtitle2,

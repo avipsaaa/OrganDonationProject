@@ -1628,8 +1628,8 @@ class _DonateWidgetState extends State<DonateWidget> {
                                           decoration: BoxDecoration(),
                                           child: FlutterFlowRadioButton(
                                             options: [
-                                              'An afterlife donor',
-                                              'A living Donor'
+                                              'Afterlife donor',
+                                              'Living Donor'
                                             ].toList(),
                                             onChanged: (value) {
                                               setState(() =>
