@@ -95,7 +95,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                         child: Image.network(
                           valueOrDefault<String>(
                             uploadedFileUrl,
-                            'https://www.freeiconspng.com/img/893',
+                            'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png',
                           ),
                           width: 100,
                           height: 100,

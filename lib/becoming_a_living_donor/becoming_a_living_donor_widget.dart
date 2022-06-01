@@ -282,7 +282,7 @@ class _BecomingALivingDonorWidgetState
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Text(
-                                      'Living donor liver transplantation has been successfully performed in the UK since 2016.\n\nA liver transplant operation is life saving surgery for patients with end stage liver disease. It is also performed for some patients with primary liver cancer and children with metabolic diseases (affecting the chemical processes within the body).',
+                                      'Living donor liver transplantation has been successfully performed in the Nepal since 2016.\n\nA liver transplant operation is life saving surgery for patients with end stage liver disease. It is also performed for some patients with primary liver cancer and children with metabolic diseases (affecting the chemical processes within the body).',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
