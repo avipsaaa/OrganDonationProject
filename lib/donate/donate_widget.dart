@@ -1621,7 +1621,7 @@ class _DonateWidgetState extends State<DonateWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 4, 0, 0),
+                                            0, 4, 0, 10),
                                         child: Container(
                                           width: double.infinity,
                                           height: 30,
@@ -1657,6 +1657,16 @@ class _DonateWidgetState extends State<DonateWidget> {
                                                 WrapCrossAlignment.start,
                                           ),
                                         ),
+                                      ),
+                                      Text(
+                                        'Note: An afterlife donor means donating your whole body while a living donor means donationg only some of your organs such as kidney, liver and tissues.',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Nunito',
+                                              color: Color(0xFF161819),
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
                                     ],
                                   ),
