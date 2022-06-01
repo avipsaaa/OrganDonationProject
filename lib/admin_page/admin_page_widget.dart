@@ -371,7 +371,11 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                                     }
                                                     List<UsersRecord>
                                                         slidableActionWidgetUsersRecordList =
-                                                        snapshot.data;
+                                                        snapshot.data
+                                                            .where((u) =>
+                                                                u.uid !=
+                                                                currentUserUid)
+                                                            .toList();
                                                     // Return an empty Container when the document does not exist.
                                                     if (snapshot.data.isEmpty) {
                                                       return Container();
